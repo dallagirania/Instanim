@@ -1,0 +1,55 @@
+<section class="loginPage">
+    <div class="contextBx">
+        <div  class="formBx">
+        <h2 class="title">S'inscrire</h2>
+        <form [formGroup]="signUpForm" (ngsubmit)="registerProprietaire()">
+            <!-- <div  class="text_field">
+                <input class="search-field" type="file" accept="image/*" (change)="onSelectFile($event)"  formControlName="img"/>
+                <img [src]="imgURL" height="50" *ngIf="imgURL">
+                <span></span>
+                <label>Photo</label>
+            </div> -->
+            <div  class="text_field">
+                <input type="text" name="firstName"  required formControlName="nom">
+                <span></span>
+                <label>Nom</label>
+            </div>
+            <div  class="text_field">
+                <input type="text" name="lastName"  required formControlName="prenom">
+                <span></span>
+                <label>Prénom</label>
+            </div>
+            <div  class="text_field">
+                <input type="email" name="email"  required formControlName="email">
+                <span></span>
+                <label>E-mail</label>
+            </div>
+            <div class="text_field">
+                <input type="password" name="password" required formControlName="mdp">
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="submit" value="S'inscrire" (click)="registerProprietaire()">
+            <div class="signup_link">
+                Vous avez déjà un compte ?
+                 <a  routerLink="/loginProprietaire">Se connecter</a>
+            </div>
+        </form>
+    </div >
+        <div class="ouDiv">
+            <hr>
+            <h3>Ou</h3>
+            <hr>
+        </div>
+        <button class="google"><img src="..\assets\images\google.png">
+            Continue avec Google</button>
+
+    </div>
+    <a class="imgBx" routerLink="">
+ <!--  <img src="..\assets\images\logo5.png" alt="Logo Instanim">  -->
+      </a>
+      
+    
+</section>
+
+

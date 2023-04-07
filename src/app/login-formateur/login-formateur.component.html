@@ -1,0 +1,53 @@
+<section class="loginPage">
+    <div class="contextBx">
+        <div  class="formBx">
+        <h2 class="title">Connexion</h2>
+        <form [formGroup]="loginForm" (ngsubmit)="loginProprietaire()">
+            <div  class="text_field">
+                <input type="email" name="email"  required formControlName="email">
+                <span></span>
+                <label>E-mail</label>
+            </div>
+
+            <div *ngIf="email?.touched && email?.invalid">
+                <small class="text-danger" *ngIf="email?.errors?.['required']">Adresse Email 
+                    est obligatoire</small>
+                <small class="text-danger" *ngIf="email?.errors?.['email']">Respecter le format de l'adresse Email </small>  
+            </div>
+
+
+            <div class="text_field">
+                <input type="password" name="password" required formControlName="mdp">
+                <span></span>
+                <label>Password</label>
+            </div>
+
+            <div *ngIf="mdp?.touched && mdp?.invalid">
+                <small class="text-danger" *ngIf="mdp?.errors?.['required']">Mot de passe 
+                    est obligatoire</small>
+                  
+              </div>
+              
+            <input type="submit" value="Se connecter" (click)="loginProprietaire()">
+            <div class="signup_link">
+                Pas encore de compte ?
+                 <a  routerLink="/registerProprietaire">S'inscrire</a>
+            </div>
+        </form>
+    </div >
+        <div class="ouDiv">
+            <hr>
+            <h3>Ou</h3>
+            <hr>
+        </div>
+        <button class="google"><img src="..\assets\images\google.png">
+            Continue avec Google</button>
+
+    </div>
+    <a class="imgBx" routerLink="">
+     <!--  <img src="..\assets\images\logo5.png" alt="Logo Instanim">  -->
+      </a>
+      
+    
+</section>
+
