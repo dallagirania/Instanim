@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <!--nav-->
+   <app-header1></app-header1>
+    <!--end nav-->
+
+
+
+    <!--Container-->
+    <div class="container"> 
+        <!----------left-sidebar----------->
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a href="/home"><img src="assets/images/dash/home.png" >Home</a>
+                <a href="#" class="nav-user-icon"><img src="assets/images/dash/profil.jpg" >Profil</a>
+                <a href="#"><img src="assets/images/dash/news.png" >Latest News</a>
+                <a href="#"><img src="assets/images/dash/besoin.png" >Besoins</a>
+                <a href="#"><img src="assets/images/dash/todo.png" >ToDo List</a>
+            </div>
+            
+           <!-- ------Pets-------->
+            <div class="Pets-links">
+                <p>My Pets</p>
+                <a href="#"  *ngFor="let ser of liste ">
+                    <img src="assets/images/dash/dog1.jpg" >{{ser.nom}}
+                </a>
+                <!-- <a href="#"><img src="assets/images/dash/dog2.jpg" >Bobo (my hero) </a>
+                <a href="#"><img src="assets/images/dash/cat1.jpg" >Mimi (the kind)</a>
+                <a href="#"><img src="assets/images/dash/rabbet.jpg" >Floppy (I am not for "Makarouna")</a> -->
+            </div>
+            
+        </div>
+
+
+        <!----------main-content----------->
+        <div class="main-content">
+
+            <!--Stories-->
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="assets/images/dash/story.png" height="50px">
+                    <p>Post Story</p>
+                </div>
+                <div class="story story2">
+                    <img src="assets/images/dash/member-1.jpg" height="50px" width="50px">
+                    <p>Rania</p>
+                </div>
+                <div class="story story3">
+                    <img src="assets/images/dash/member-2.jpg" height="50px" width="50px">
+                    <p>Mohamed</p>
+                </div>
+                <div class="story story4">
+                    <img src="assets/images/dash/member-3.jpg" height="50px" width="50px">
+                    <p>Samar</p>
+                </div>
+                <div class="story story5">
+                    <img src="assets/images/dash/membre-4.jpg" height="50px" width="50px">
+                    <p>Fadoua</p>
+                </div>
+            </div>
+
+            <!--Post Publication-->
+            <div class="write-post-container">
+                <div class="user-profil">
+                    <img src="assets/images/dash/profil.jpg" width="50px" height="50px">
+                    <div>
+                        <p>Ahmed Ben</p>
+                        <small>Public <i class="fa-solid fa-caret-down" style="color: #366a6b;"></i></small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="Tell us about your pets, Ahmed!"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="assets/images/dash/live-video.png" >Live Video</a>
+                        <a href="#"><img src="assets/images/dash/photo.png" >Photo/Video</a>
+                        <a href="#"><img src="assets/images/dash/feeling.png" >Feeling/Activity</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profil">
+                        <img src="assets/images/dash/profil.jpg" width="50px" height="50px">
+                        <div>
+                            <p>Ahmed Ben</p>
+                            <span>April 08 2023, 06:09 pm</span>
+                        </div>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-ellipsis-h" style="color: #366a6b;"></i></a>
+                </div>
+                
+                
+                <p class="post-text">My new prety cat <span>Mimi</span>!! <br> Welcome to our lovely family! </p>
+                <img src="assets/images/dash/cat1.jpg"  class="post-img">
+                
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="assets/images/dash/like.png" >120</div>
+                        <div><img src="assets/images/dash/comments.png" >45</div>
+                        <div><img src="assets/images/dash/share.png" >12</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="assets/images/dash/profil.jpg" > <i class="fa-solid fa-caret-down" style="color: #366a6b;"></i>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profil">
+                        <img src="assets/images/dash/profil.jpg" width="50px" height="50px">
+                        <div>
+                            <p>Ahmed Ben</p>
+                            <span>April 08 2023, 06:09 pm</span>
+                        </div>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-ellipsis-h" style="color: #366a6b;"></i></a>
+                </div>
+                
+                
+                <p class="post-text">Friends !!  </p>
+                <img src="assets/images/dash/profil.jpg"  class="post-img">
+                
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="assets/images/dash/like-blue.png" >120</div>
+                        <div><img src="assets/images/dash/comments.png" >45</div>
+                        <div><img src="assets/images/dash/share.png" >12</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="assets/images/dash/profil.jpg" > <i class="fa-solid fa-caret-down" style="color: #366a6b;"></i>
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profil">
+                        <img src="assets/images/dash/profil.jpg" width="50px" height="50px">
+                        <div>
+                            <p>Ahmed Ben</p>
+                            <span>April 08 2023, 06:09 pm</span>
+                        </div>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-ellipsis-h" style="color: #366a6b;"></i></a>
+                </div>
+                
+                
+                <p class="post-text">Lovely !!  </p>
+                <img src="assets/images/dash/dog3.jpg"  class="post-img">
+                
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="assets/images/dash/like-blue.png" >120</div>
+                        <div><img src="assets/images/dash/comments.png" >45</div>
+                        <div><img src="assets/images/dash/share.png" >12</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="assets/images/dash/profil.jpg" > <i class="fa-solid fa-caret-down" style="color: #366a6b;"></i>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <button type="button" class="load-more-btn">Load More</button>
+
+
+        </div> 
+        
+        
+
+
+
+
+
+        <!----------right-sidebar----------->
+        <div class="right-sidebar">
+            
+            <!--diseases-->
+            <div class="sidebar-title">
+                <h4>Current pets diseases</h4>
+                <a href="#">See All</a>
+            </div>
+
+            <div class="disease">
+                <div class="left-disease">
+                    <h3>Canine distemper</h3>
+                    <span>Deadly disease</span>
+                </div>
+                <div class="right-disease">
+                    <h4>Dogs</h4>
+                    <p>very contagious virus</p>
+                    <a href="#">More info</a>
+                </div>
+            </div>
+            <div class="disease">
+                <div class="left-disease">
+                    <h3>Kennel Cough</h3>
+                    <span>very contagious</span>
+                </div>
+                <div class="right-disease">
+                    <h4>Dogs</h4>
+                    <p>Cough might not show any symptoms</p>
+                    <a href="#">More info</a>
+                </div>
+            </div>
+
+            <!--advertisement-->
+            <div class="sidebar-title">
+                <h4>Advertisement</h4>
+                <a href="#">Close</a>
+            </div>
+            <img src="assets/images/dash/advertisement.jpg" class="sidebar-ads" height="200px">
+
+             <!--Conversation-->
+             <div class="sidebar-title">
+                <h4>Conversation</h4>
+                <a href="#">Hide Chat</a>
+            </div>
+
+                    <!--online list-->
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="assets/images/dash/member-1.jpg" >
+                        </div>
+                        <p>Rania Dallagi</p>
+                    </div>
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="assets/images/dash/member-2.jpg" >
+                        </div>
+                        <p>Mohamed Mohamed</p>
+                    </div>
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="assets/images/dash/member-3.jpg" >
+                        </div>
+                        <p>Samar Rabboudi</p>
+                    </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>Copyright 2023 - InstAnim</p>
+    </div>
+
+  <script src="assets/js/script.js"></script> 
+</body>
+</html>

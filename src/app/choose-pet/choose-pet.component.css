@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@700&display=swap');
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,19 +35,15 @@
     width: 50px;
     height: auto;
    
-}
-.content{
-   /*  margin-top: 20px; */
-    /* background-image: url("src\assets\images\bgColor.png");
-    background-repeat: no-repeat;
-    background-size: cover;*/
+} */
+/* .content{
     padding: 20px 0;
     display: flex;
     justify-content:space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-} 
+}  */
 .welcomeDiv{
     width: 50%;
     height: 100%;
@@ -66,7 +62,6 @@
     line-height: 1.75rem;
     letter-spacing: .025em;
     color: rgb(44, 44, 44);
-  /*   font-family: 'Segoe UI'; */
     margin: 40px 0 40px;
     padding: 1rem 0;
 }
@@ -161,7 +156,6 @@ input[type="text"]::placeholder{
 }
 
 .addPetBtn{
-  /*   background-color: #ffb347; */
     background-color: #e98654;
     color: #fff;
     font-size: 1.1rem;

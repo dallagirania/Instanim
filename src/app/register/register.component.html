@@ -1,98 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+  <body>
+    <app-header></app-header>
 
-<body>
-<app-header></app-header>
-
-
-<div class="inner-page-banner">
-<div class="breadcrumb-vec-btm">
-<img class="img-fluid" src="assets/images/bg/inner-banner-btm-vec.png" alt="">
-</div>
-<div class="container">
-<div class="row justify-content-center align-items-center text-center">
-<div class="col-lg-6 align-items-center">
-<div class="banner-content">
-<h1>Sign Up</h1>
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="/home">Home</a></li>
-<li class="breadcrumb-item active" aria-current="page">Sign Up</li>
-</ol>
-</nav>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="banner-img d-lg-block d-none">
-<div class="banner-img-bg">
-<img class="img-fluid" src="assets/images/bg/inner-banner-vec.png" alt="">
-</div>
-<img class="img-fluid" src="assets/images/bg/inner-banner-img.png" alt="">
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="signup-section pt-120 pb-120">
-<div class="container">
-<div class="row d-flex justify-content-center">
-<div class="col-xl-6 col-lg-8 col-md-10">
-<div class="form-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
-<div class="form-title">
-<h3>Sign Up</h3>
-<p>Do you already have an account? <a href="/login">Log in here</a></p>
-</div>
-<form class="w-100" [formGroup]="signUpForm">
-<div class="row">
- <div class="col-md-6">
-<div class="form-inner">
-<label>Frist Name *</label>
-<input type="email" placeholder="Frist Name">
-</div>
-
-</div>
-<div class="col-md-6">
-<div class="form-inner">
-<label>Last Name *</label>
-<input type="email" placeholder="Last Name">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-inner">
-<label>Enter Your Email *</label>
-<input type="email" placeholder="Enter Your Email">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-inner">
-    <label>Enter Your Password *</label>
-    <input  [type]="type" name="password" id="password" placeholder="Create A Password" formControlName="password"/>
-    <i class="bi {{eyeIcon}}" (click)="hideShowPass()" id="togglePassword"></i>
-</div>
-</div>
-
-<div class="col-md-12">
-    <div class="form-inner">
-    <label>Confirm Password *</label>
-    <input [type]="type2" name="password" id="password2" placeholder="Confirm Password" formControlName="cpassword"/>
-    <i class="bi {{eyeIcon2}}" (click)="hideShowCPass()" id="togglePassword2"></i>
+    <div class="inner-page-banner">
+      <div class="breadcrumb-vec-btm">
+        <img
+          class="img-fluid"
+          src="assets/images/bg/inner-banner-btm-vec.png"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-lg-6 align-items-center">
+            <div class="banner-content">
+              <h1>Sign Up</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Sign Up
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-img d-lg-block d-none">
+              <div class="banner-img-bg">
+                <img
+                  class="img-fluid"
+                  src="assets/images/bg/inner-banner-vec.png"
+                  alt=""
+                />
+              </div>
+              <img
+                class="img-fluid"
+                src="assets/images/bg/inner-banner-img.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-</div>
-</div>
-<button class="account-btn">Create Account</button>
-</form>
+    <div class="signup-section pt-120 pb-120">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-6 col-lg-8 col-md-10">
+            <div
+              class="form-wrapper wow fadeInUp"
+              data-wow-duration="1.5s"
+              data-wow-delay=".2s"
+            >
+              <div class="form-title">
+                <h3>Sign Up</h3>
+                <p>
+                  Do you already have an account?
+                  <a href="/login">Log in here</a>
+                </p>
+              </div>
+              <form class="w-100" [formGroup]="signUpForm" (ngsubmit)="registerProprietaire()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-inner">
+                      <label>Frist Name *</label>
+                      <input type="email" placeholder="Frist Name"  required formControlName="nom"/>
+                    </div>
+                  </div>
+                  <div *ngIf="nom?.touched && nom?.invalid">
+                    <small class="text-danger" *ngIf="nom?.errors?.['required']">Last Name 
+                        is required</small>
+                </div>
+                  <div class="col-md-6">
+                    <div class="form-inner">
+                      <label>Last Name *</label>
+                      <input type="email" placeholder="Last Name"  required formControlName="prenom"/>
+                    </div>
+                  </div>
+                  <div *ngIf="prenom?.touched && prenom?.invalid">
+                    <small class="text-danger" *ngIf="prenom?.errors?.['required']">Last Name 
+                      is required</small>
+                </div>
+                  <div class="col-md-12">
+                    <div class="form-inner">
+                      <label>Enter Your Email *</label>
+                      <input type="email" placeholder="Enter Your Email" required formControlName="email" />
+                    </div>
+                  </div>
+                  
+                  <div *ngIf="email?.touched && email?.invalid">
+                    <small class="text-danger" *ngIf="email?.errors?.['required']">Email Address
+                      is required</small>
+                    <small class="text-danger" *ngIf="email?.errors?.['email']">Respect The Format Of THe Email Address</small>  
+                </div>
 
+                  <div class="col-md-12">
+                    <div class="form-inner">
+                      <label>Enter Your Password *</label>
+                      <input [type]="type"  name="password"   id="password"   placeholder="Create A Password"  formControlName="mdp" />
+                      <i class="bi {{ eyeIcon }}"  (click)="hideShowPass()"id="togglePassword" ></i>
+                    </div>
+                  </div>
+                  <div *ngIf="mdp?.touched && mdp?.invalid">
+                    <small class="text-danger" *ngIf="mdp?.errors?.['required']">Password 
+                      is required</small>
+                </div>
 
-</div>
-</div>
-</div>
-</div>
-</div>
+                  <div class="col-md-12">
+                    <div class="form-inner">
+                      <label>Confirm Password *</label>
+                      <input [type]="type2" id="password2" placeholder="Confirm Password"  formControlName="cpassword" formControlName="cmdp"  />
+                      <i class="bi {{ eyeIcon2 }}" (click)="hideShowCPass()"  id="togglePassword2" ></i>
+                    </div>
+                  </div>
+                  <div *ngIf="cmdp?.touched && cmdp?.invalid">
+                    <small class="text-danger" *ngIf="cmdp?.errors?.['required']">Password 
+                      is required</small>
+                </div>
+                </div>
+                <button class="account-btn" (click)="registerProprietaire()">Create Account</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<app-footer></app-footer>>
-
-
-</body>
+    <app-footer></app-footer>>
+  </body>
 </html>

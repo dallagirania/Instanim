@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CrudService } from '../Service/crud.service';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { Proprietaire } from '../Model/Proprietaire.model';
 
 @Component({
   selector: 'app-register',
@@ -14,17 +18,91 @@ export class RegisterComponent implements OnInit {
   eyeIcon: string = "bi-eye-slash";
   eyeIcon2: string = "bi-eye-slash";
   signUpForm!: FormGroup;
+  mail:any
+  userFile:any
+  message?:String
+  imgURL:any
+  imagePath:any
+  constructor( 
+    private service: CrudService,
+    private router: Router,
+    private fb: FormBuilder,
+    private toast:NgToastService
+  ) {
+    let formControls = {
+      nom: new FormControl('', [
+        Validators.required,
 
-  constructor(private fb: FormBuilder) { }
+      ]),
+      prenom: new FormControl('', [
+        Validators.required,
+
+      ]),
+      mdp: new FormControl('', [
+        Validators.required,
+
+      ]),
+      cmdp: new FormControl('', [
+        Validators.required,
+
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email
+
+      ]),
+    }
+    this.signUpForm= this.fb.group(formControls)
+
+  }
+  get email() { return this.signUpForm.get('email') }
+  get nom() { return this.signUpForm.get('nom') }
+  get prenom() { return this.signUpForm.get('prenom') }
+  get mdp() { return this.signUpForm.get('mdp') }
+  get cmdp() { return this.signUpForm.get('cmdp') }
+ 
+  
+  registerProprietaire() {
+    let data = this.signUpForm.value;
+    console.log(data);
+    let proprietaire = new Proprietaire(
+      undefined,data.nom,data.prenom,data.email,data.mdp);
+       console.log(proprietaire);
+    if(data.nom==0||data.prenom==0||data.email==0||data.mdp==0||data.cmdp==0)
+    {this.toast.info({
+      detail:'error msg !!',
+      summary:'Fil In Your Fields'
+    });}else if(data.mdp!=data.cmdp){
+      this.toast.info({
+        detail:'error msg !!',
+        summary:'Verify yourPassword'
+      });
+    }
+     else{
+
+    this.service.addProprietaire(proprietaire).subscribe(
+
+      res => {
+        console.log(res);
+        this.router.navigate(['/login']);
+      },
+      err => {
+        console.log(err);
+        this.toast.error({
+          detail:'error msg',
+          summary:'Check Your Form!'
+        });
+
+      }
+
+    )
+  }
+
+  }
+
 
   ngOnInit(): void {
-    this.signUpForm = this.fb.group({
-      firstName: ['',Validators.required],
-      lastName: ['',Validators.required],
-      email: ['',Validators.required],
-      password: ['',Validators.required],
-      cpassword: ['',Validators.required],
-    })
+   
   }
 
   hideShowPass(){

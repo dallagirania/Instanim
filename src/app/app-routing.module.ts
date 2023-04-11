@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChoosePetComponent } from './choose-pet/choose-pet.component';
-
-import { LoginFormateurComponent } from './login-formateur/login-formateur.component';
-
-import { RegisterFormateurComponent } from './register-formateur/register-formateur.component';
 import { AuthGuard } from './Service/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -14,11 +10,14 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { VeterinaryComponent } from './veterinary/veterinary.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListgComponent } from './listg/listg.component';
+import { ListbComponent } from './listb/listb.component';
+import { ListdComponent } from './listd/listd.component';
 
 
 const routes: Routes = [
-  { path: 'loginProprietaire', component:LoginFormateurComponent  },
-  { path: 'registerProprietaire', component:RegisterFormateurComponent },
+ 
   { path: 'addanimal', component:ChoosePetComponent},
   { path: 'home', component:HomeComponent},
   { path: 'contact', component:ContactComponent},
@@ -28,6 +27,11 @@ const routes: Routes = [
   { path: 'header', component:HeaderComponent},
   { path: 'footer', component:FooterComponent},
   { path: 'vet', component:VeterinaryComponent},
+  { path: 'dashboard', component:DashboardComponent},
+  { path: 'listeGrooming', component:ListgComponent},
+  { path: 'listeBoarding', component:ListbComponent},
+  { path: 'listeDaycare', component:ListdComponent},
+  { path: 'header1', component:ListdComponent},
 ];
 
 @NgModule({

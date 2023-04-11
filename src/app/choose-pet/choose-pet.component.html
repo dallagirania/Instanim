@@ -1,55 +1,108 @@
-<section class="container">
-    <header class="head">
-        <div class="logoDiv">
-            <img class="logo" src="..\assets\images\animal-care.png" alt="">
-            <p>Instanim</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <app-header></app-header>
 
-    </header>
-    <div class="content">
-        <div class="welcomeDiv">
-            <h4>Bienvenue sur Instanim !</h4>
-            <h2>Le meilleur réseau social pour les propriétaires d'animaux.</h2>
-            <p>Choisissez la race de votre animal de compagnie et profitez de votre expérience parentale tout en gardant votre meilleur ami heureux, propre et en bonne santé .</p>
-            <button class="continueBtn">Continuez<img src="..\assets\images\right-arrow.png" alt=""></button>
+    <div class="inner-page-banner">
+      <div class="breadcrumb-vec-btm">
+        <img  class="img-fluid"   src="assets/images/bg/inner-banner-btm-vec.png"  alt=""/>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-lg-6 align-items-center">
+            <div class="banner-content">
+              <h1> Add Your Pets</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Add Your Pets
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-img d-lg-block d-none">
+              <div class="banner-img-bg">
+                <img
+                  class="img-fluid"
+                  src="assets/images/bg/inner-banner-vec.png"
+                  alt=""
+                />
+              </div>
+              <img
+                class="img-fluid"
+                src="assets/images/bg/inner-banner-img.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
-        <div class="petDiv">
-            <img src="..\assets\images\poppy-removebg.png" alt="poppy image" class="poppy">
+      </div>
+    </div>
+    <div class="h1-story-area mb-120" style="margin-top: 100px;">
+      <div class="container">
+        <div class="row g-lg-4 gy-5">
+          <div class="col-lg-6">
+            <div class="section-title1">
+              <span><img src="assets/images/icon/section-vec-l1.svg" alt="" />Welcome to Instanim !<img src="assets/images/icon/section-vec-r1.svg" alt=""/></span>
+              <h2>Join the best pet-loving community.</h2>
+            </div>
+            <div class="story-content">
+              <p>
+                Choose the breed of your pet
+                and enjoy your parenting experience while
+                keeping your best friend happy, clean and healthy
+                good health .
+              
+              </p>
+              <div class="form-inner">
+                <button (click)="Continue()" class="primary-btn1" style="width:300px;margin-top: 50px;">Continuez<img src="..\assets\images\right-arrow.png" alt=""></button>
+            </div>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center" >
+            <div class="story-img">
+              <div class="petDiv" style="margin-left: 200px;">
+               <img src="..\assets\images\poppy-removebg.png" alt="poppy image" class="poppy">
             <img src="..\assets\images\cat-removebg.png" alt="cat image" class="cat">
-            <h2>Enregistrement des animaux</h2>
-            <p>Continuez avec la saisie des informations de votre animal.</p>
-            <form class="petFormDiv" [formGroup]="petForm">
-               <div formArrayName ="pets"   *ngFor="let pet of petArray.controls; let i=index;" >
-                    <div class="form"  [formGroupName]="i"> 
+            <h2>Registration of animals</h2>
+            <p>Continue with entering your pet's information.</p>
+            <form class="petFormDiv" [formGroup]="ajoutForm" (ngsubmit)="ajouterAnimal()">
+               <div>
+                    
                         <div id="form-div">
-                            <input type="text" id="petName" name="petName" placeholder="Nom" formControlName="petName" >
+                            <input type="text" id="petName" name="petName" placeholder="Nom" formControlName="nom" >
                         </div>
                         <div id="form-div">
-                            <select id="dropdown" name="petRace" formControlName="petRace" >
-                                <option  value="Race">Race</option>
-                            </select>
+                            <input type="text" id="race" name="race" placeholder="race" formControlName="race" >
                         </div>
                         <div id="form-div">
-                            <select id="dropdown" name="petAge" formControlName="petAge" >
-                                <option  value="Age">Age</option>
-                            </select>
+                            <input type="text" id="age" name="age" placeholder="age par mois" formControlName="age" >
                         </div>
-                        <div id="form-div">
-                            <select id="dropdown" name="petPoids" formControlName="petPoids" >
-                                <option  value="poids">Poids</option>
-                            </select>
+                         <div id="form-div">
+                            <input type="text" id="poids" name="poids" placeholder="poids par g" formControlName="poids" >
                         </div>
-                  </div>
+                  
                 </div> 
                         <div id="form-div" class="addPetDiv">                    
-                            <button class="addPetBtn" (click)="addPet()">
-                                Ajoutez un animal
-                                <img src="..\assets\images\empreinte-de-patte.png" alt="">
-                            </button>
+                            <button (click)="ajouterAnimal()"  class="primary-btn1" style="margin-left: 100px;width: 200px;height:50px;"> Add Animal<img src="..\assets\images\empreinte-de-patte.png" alt=""></button>
                         </div>
             </form>
         </div>
-
-
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+
+    <!-- <div class="location-map">
+      <div class="vector">
+        <img src="assets/images/bg/map-vector.png" alt="" />
+      </div>
+    </div> -->
+
+    <app-footer></app-footer>
+  </body>
+</html>

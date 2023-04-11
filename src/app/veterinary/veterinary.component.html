@@ -36,140 +36,22 @@
 <div class="team-area two pt-120 mb-120">
 <div class="container">
 <div class="row gy-5">
-<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="col-lg-3 col-md-4 col-sm-6"  *ngFor="let vet of liste ">
 <div class="single-team-card">
 <div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-001.png" alt="">
+    <img [src]="vet.img" class="img-fluid"  alt="">
+<!-- <img class="img-fluid" src="assets/images/bg/team/team-001.png" alt=""> -->
 </div>
 <div class="member-content">
-<span>Co-Founder</span>
-<h3>Kash Preston</h3>
+<h3>{{vet.nom}}{{' '}}{{vet.prenom}}</h3>
+<span >{{vet.email}}</span><br>
+<span >{{vet.tel}}</span><br>
+<span>{{vet.adresse}}</span>
+
  </div>
 </div>
 </div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-002.png" alt="">
-</div>
-<div class="member-content">
-<span>Kennel Assistant</span>
-<h3>Scarlett
-Emily</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-003.png" alt="">
-</div>
-<div class="member-content">
-<span>Veterinary Assistant</span>
-<h3>Jackson Mateo</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-004.png" alt="">
-</div>
-<div class="member-content">
-<span>Groomer Manager</span>
-<h3>Madison
-Ellie</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-005.png" alt="">
-</div>
-<div class="member-content">
-<span>Team Manager</span>
-<h3>Luna Camila</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-006.png" alt="">
-</div>
-<div class="member-content">
-<span>Dog Walker</span>
-<h3>Elias Josiah</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-007.png" alt="">
-</div>
-<div class="member-content">
-<span>pet sitter</span>
-<h3>Scarlett Emily</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-008.png" alt="">
-</div>
-<div class="member-content">
-<span>Cat Behaviorist</span>
-<h3>Ezekiel Miles</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-009.png" alt="">
- </div>
-<div class="member-content">
-<span>Pet Trainer</span>
-<h3>Cooper Waylon</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-0010.png" alt="">
-</div>
-<div class="member-content">
-<span>Veterinary Medicine</span>
-<h3>Colton Roman</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-0011.png" alt="">
-</div>
-<div class="member-content">
-<span>Pet Trainer</span>
-<h3>Daniel Michael</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-<div class="single-team-card">
-<div class="member-img">
-<img class="img-fluid" src="assets/images/bg/team/team-0012.png" alt="">
-</div>
-<div class="member-content">
-<span>Veterinary Medicine</span>
-<h3>Julian Hudson</h3>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>

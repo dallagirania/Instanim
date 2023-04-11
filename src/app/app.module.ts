@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoginFormateurComponent } from './login-formateur/login-formateur.component';
-import { RegisterFormateurComponent } from './register-formateur/register-formateur.component';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
@@ -20,6 +19,11 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { VeterinaryComponent } from './veterinary/veterinary.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListgComponent } from './listg/listg.component';
+import { ListbComponent } from './listb/listb.component';
+import { ListdComponent } from './listd/listd.component';
+import { Header1Component } from './header1/header1.component';
 // import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
 
 // // configure Swiper to use modules
@@ -31,8 +35,7 @@ import { VeterinaryComponent } from './veterinary/veterinary.component';
 @NgModule({
   declarations: [
     AppComponent, 
-    LoginFormateurComponent,
-    RegisterFormateurComponent,
+  
     ChoosePetComponent,
     HomeComponent,
     ContactComponent,
@@ -41,7 +44,12 @@ import { VeterinaryComponent } from './veterinary/veterinary.component';
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    VeterinaryComponent, 
+    VeterinaryComponent,
+    DashboardComponent,
+    ListgComponent,
+    ListbComponent,
+    ListdComponent,
+    Header1Component, 
     
     // SwiperModule
     
