@@ -34,20 +34,16 @@ export class ChoosePetComponent implements OnInit {
       this.user=this.service.userDetail()
 
       let formControls = {
-        nom: new FormControl('', [
+        petName: new FormControl('', [
           Validators.required,
   
         ]),
        
-        race: new FormControl('', [
+        petBirth: new FormControl('', [
           Validators.required,
   
         ]),
-        age: new FormControl('', [
-          Validators.required,
-  
-        ]),
-        poids: new FormControl('', [
+        petType: new FormControl('', [
           Validators.required,
   
         ]),
@@ -56,25 +52,26 @@ export class ChoosePetComponent implements OnInit {
       this.ajoutForm= this.fb.group(formControls)
     }
     
-    get nom() { return this.ajoutForm.get('nom') }
-    get race() { return this.ajoutForm.get('race') }
-    get age() { return this.ajoutForm.get('age') }
-    get poids() { return this.ajoutForm.get('poids') }
+    get petName() { return this.ajoutForm.get('petName') }
+    get petType() { return this.ajoutForm.get('petType') }
+    get petBirth() { return this.ajoutForm.get('petBirth') }
+  
    
     ajouterAnimal() {
       let data = this.ajoutForm.value;
       console.log(data);
       let anim = new Animal(
-         undefined ,data.nom, data.race,JSON.parse(JSON.stringify(this.currentProp)), data.age,data.poids);
+         undefined ,data.petName, data.petType,JSON.parse(JSON.stringify(this.currentProp)), data.petBirth);
          console.log(anim); 
          this.currentProp.animal.push(anim);
          console.log(55)
          this.service.updateProp(this.currentProp.id!, this.currentProp)
-      if(data.nom==0||data.race==0||data.age==0||data.poids==0)
+      if(data.petName==0||data.petType==0||data.petBirth==0)
       {this.toast.info({
         detail:'error msg !!',
         summary:'remplir votre champs'
-      });}else {    
+      });
+    }else {    
       this.service.addAnimal(anim).subscribe(
 
   
@@ -84,7 +81,6 @@ export class ChoosePetComponent implements OnInit {
             detail:'success msg',
             summary:'Ajout avec Succés'
           }); 
-  
           this.router.navigate(['/dashboard']);
         },
         err => {

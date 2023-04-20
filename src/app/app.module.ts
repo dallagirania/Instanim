@@ -24,6 +24,8 @@ import { ListgComponent } from './listg/listg.component';
 import { ListbComponent } from './listb/listb.component';
 import { ListdComponent } from './listd/listd.component';
 import { Header1Component } from './header1/header1.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogComponent } from './blog/blog.component';
 // import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
 
 // // configure Swiper to use modules
@@ -49,7 +51,9 @@ import { Header1Component } from './header1/header1.component';
     ListgComponent,
     ListbComponent,
     ListdComponent,
-    Header1Component, 
+    Header1Component,
+    BlogListComponent,
+    BlogComponent, 
     
     // SwiperModule
     
