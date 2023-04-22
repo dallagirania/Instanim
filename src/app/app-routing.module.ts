@@ -14,6 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListgComponent } from './listg/listg.component';
 import { ListbComponent } from './listb/listb.component';
 import { ListdComponent } from './listd/listd.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'listeBoarding', component:ListbComponent},
   { path: 'listeDaycare', component:ListdComponent},
   { path: 'header1', component:ListdComponent},
+  { path: 'blog-list', component:BlogListComponent},
+  { path: 'blog', component:BlogComponent},
 ];
 
 @NgModule({

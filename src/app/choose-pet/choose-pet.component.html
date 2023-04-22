@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <body>
     <app-header></app-header>
-
+<!-- 
     <div class="inner-page-banner">
       <div class="breadcrumb-vec-btm">
         <img  class="img-fluid"   src="assets/images/bg/inner-banner-btm-vec.png"  alt=""/>
@@ -40,7 +37,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="h1-story-area mb-120" style="margin-top: 100px;">
       <div class="container">
         <div class="row g-lg-4 gy-5">
@@ -57,8 +54,8 @@
                 good health .
               
               </p>
-              <div class="form-inner">
-                <button (click)="Continue()" class="primary-btn1" style="width:300px;margin-top: 50px;">Continuez<img src="..\assets\images\right-arrow.png" alt=""></button>
+              <div class="form-inner" style="display: flex; align-items: center;">
+                <button (click)="Continue()" style="align-items: center; width: 200px; margin-top: 20px; padding: 10px 0;" class="primary-btn1 addPetDiv">Continue<i class="fa-solid fa-arrow-right-long" style="margin-left: 10px;"></i></button>
             </div>
             </div>
           </div>
@@ -68,26 +65,31 @@
                <img src="..\assets\images\poppy-removebg.png" alt="poppy image" class="poppy">
             <img src="..\assets\images\cat-removebg.png" alt="cat image" class="cat">
             <h2>Registration of animals</h2>
-            <p>Continue with entering your pet's information.</p>
             <form class="petFormDiv" [formGroup]="ajoutForm" (ngsubmit)="ajouterAnimal()">
                <div>
-                    
                         <div id="form-div">
-                            <input type="text" id="petName" name="petName" placeholder="Nom" formControlName="nom" >
-                        </div>
-                        <div id="form-div">
-                            <input type="text" id="race" name="race" placeholder="race" formControlName="race" >
+                          <label >Enter Your Pet's Name *</label>
+                          <input type="text" id="petName" name="petName" placeholder="Pet's Name" formControlName="petName" >
+                          <small *ngIf="ajoutForm.controls['petName'].dirty && ajoutForm.hasError('required','petName')" class="text-danger">*Pet's name is required</small>
                         </div>
                         <div id="form-div">
-                            <input type="text" id="age" name="age" placeholder="age par mois" formControlName="age" >
+                          <label >Enter Your Pet's Type *</label>
+                          <select name="petType" id="pet_type">
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                          </select>
+                          <small *ngIf="ajoutForm.controls['petType'].dirty && ajoutForm.hasError('required','petType')" class="text-danger">*Pet's type is required</small>
                         </div>
-                         <div id="form-div">
-                            <input type="text" id="poids" name="poids" placeholder="poids par g" formControlName="poids" >
+                        <div id="form-div">
+                          <label >Enter Your Pet's Birthday Date *</label>
+                            <input type="date" id="petBirth" name="petBirth" formControlName="petBirth" >
+                            <small *ngIf="ajoutForm.controls['petBirth'].dirty && ajoutForm.hasError('required','petBirth')" class="text-danger">*Pet's birthdate is required</small>
                         </div>
-                  
                 </div> 
-                        <div id="form-div" class="addPetDiv">                    
-                            <button (click)="ajouterAnimal()"  class="primary-btn1" style="margin-left: 100px;width: 200px;height:50px;"> Add Animal<img src="..\assets\images\empreinte-de-patte.png" alt=""></button>
+       
+                        <div id="form-div" class="addPetDiv" style="text-align: center;">                    
+                           <!--  <button (click)="ajouterAnimal()"  class="primary-btn1" style="margin-left: 100px;width: 200px;height:50px;"> Add Animal<img src="..\assets\images\empreinte-de-patte.png" alt=""></button> -->
+                          <button (click)="ajouterAnimal()" style="align-items: center; width: 200px; margin-top: 20px; padding: 10px 0;" class="primary-btn1 addPetDiv">Add pet<i class="fa-solid fa-paw" style="margin-left: 10px;"></i></button>
                         </div>
             </form>
         </div>
@@ -103,6 +105,4 @@
       </div>
     </div> -->
 
-    <app-footer></app-footer>
-  </body>
-</html>
+ 
