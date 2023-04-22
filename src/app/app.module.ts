@@ -25,6 +25,20 @@ import { Header1Component } from './header1/header1.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { ForumComponent } from './forum/forum.component';
+import { DashboardVeterinaryComponent } from './dashboard-veterinary/dashboard-veterinary.component';
+import { DashboardDaycareComponent } from './dashboard-daycare/dashboard-daycare.component';
+import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-grooming.component';
+import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
+// import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
+
+// // configure Swiper to use modules
+// Swiper.use([Navigation, Pagination,Scrollbar]);
+
+// init Swiper:
+// const swiper = new Swiper(".home1-services-slider", {observer: true,observeParents: true,slidesPerView:4,spaceBetween:24,loop:true,speed:1500,autoplay:{delay:2000,disableOnInteraction:false},navigation:{nextEl:".next-btn-1",prevEl:".prev-btn-1",},breakpoints:{280:{slidesPerView:1,spaceBetween:15},480:{slidesPerView:1},768:{slidesPerView:2},992:{slidesPerView:3},1200:{slidesPerView:4},1400:{slidesPerView:4},1600:{slidesPerView:4},}});
+
 
 @NgModule({
   declarations: [
@@ -45,6 +59,14 @@ import { AddPetComponent } from './add-pet/add-pet.component';
     BlogListComponent,
     BlogComponent,
     AddPetComponent, 
+    DashboardMenuComponent,
+    ForumComponent,
+    DashboardVeterinaryComponent,
+    DashboardDaycareComponent,
+    DashboardGroomingComponent,
+    DashboardBoardingComponent, 
+    
+    // SwiperModule
     
   ],
   imports: [

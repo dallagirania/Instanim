@@ -4,59 +4,8 @@
     justify-content: center;
     width: 100%;
     position: relative;
-}
-.dashboard-menu{
-    width: 20%;
-    border-right: solid #bbbbbb;
-    border-width: 0 0.05px;
-    color: var(--title-color1);
-    position: fixed;
-    top: 70px;
-    left: 0;
-    min-height: 100vh;
-
-}
-.dashboard-menu hr{
-    border: solid #bbbbbb;
-    border-width: 0 0.05px;
-}
-.menu-list{
-    padding:1rem 1rem 0;
-}
-.menu-item{
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    padding:10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-.menu-item:hover{
-background-color: var(--title-color1);
-color: var(--white);
-}
-.menu-item> i{
-    margin-right: 15px;
-    width: 20px;
-}
-.pets{
-    border-top: solid black;
-    border-width: 0 1px;
-    padding: 1rem;
-}
-.pets h4{
-    padding: 0 15px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    
-}
-.petProfil{
-    width: 25px; 
-    height: 25px; 
-    border-radius: 50%;
-    margin-right: 15px;
+    font-family: var(--font-cabin);
+    color: #868686;
 }
 .feed-content{
     width: 80%;
@@ -124,11 +73,16 @@ color: var(--white);
     background-color: #f3f4f6;
 }
 .new-post-option-item i{
-    background-color: #dbeafe;
+    border: 1px solid;
+    border-color: #f46f30;
+    color: var(--white);
+    background: var(--gradient-color);
     border-radius: 50%;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 15px;
+    line-height: 1;
     margin-right: 10px;
+    text-align: center;
 }
 .new-post-option-item h6{
     font-weight: 700;
@@ -250,14 +204,29 @@ color: var(--white);
     0 4px 8px rgba(0,0,0,0.11);
     border-radius: 5px;
 }
+.birthdays-div h5{
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
 .celebrate-div{
     display: flex;
-   /*  justify-content:center ;
-    align-items: center; */
+    justify-content:center ;
+    align-items: baseline; 
     margin-top: 10px;
+   
+}
+.celebrate-div i{
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+    font-size: 1.3rem;
 }
 .celebrate-div p{
-    margin-top: 5px;
+    color: var(--title-color1);
 }
 .gift-img{
     margin-right: 10px;

@@ -69,46 +69,50 @@
     0 4px 8px rgba(0,0,0,0.11);
     border-radius: 5px;
     width: 100%;
-    padding: 20px 15px;
+    padding: 20px;
 }
 .blog-item{
     display: flex;
     justify-content: baseline;
     align-items: start;
     color: #868686;
+    flex-wrap: nowrap;
 }
 .blog-item:hover{
     cursor: pointer;
 }
 .blog-img{
-    border-radius: 10px;
-    width: 350px;
-    height: 150px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     margin-right: 15px;
     cursor: pointer;
+}
+.blog-details{
+    max-width: 500px;
 }
 .blog-details .blog-title {
     font-weight: 700;
     cursor: pointer;
+    margin-bottom: 3px;
 }
 .blog-details .blog-title:hover{
     background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.blog-engagement{
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
+.blog-details h6{
+    font-size: 14px;
+    color: #a1a1a1;
 }
-.blog-engagement-item{
+.engagement{
     display: flex;
-    align-items: start;
-    justify-content: baseline;
-    margin-right: 25px;
+    justify-content: center;
+    align-items: baseline;
 }
-.blog-engagement-item i{
-    margin-right: 7px;
+.engagement i{
+    margin-right: 10px;
+    font-size: 1.1rem;
 }
 .feed-content-right{
     width: 25%;
@@ -118,7 +122,7 @@
 }
 .recent-blog-title{
     width: 100%;
-    padding: 15px 0; 
+    padding: 15px 0 0; 
     font-weight: 600;
 }
 .recent-blog-title h4{
@@ -126,31 +130,21 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
-.recent-blog-item h6{
-    color: var(--title-color1);
-    margin-bottom: 1px;
-    line-height: 1.5em;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 400;
-}
-.recent-blog-details{
+.recent-blog-item{
     display: flex;
-    justify-content: baseline;
-    align-items: center;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
-.recent-blog-details p{
-    font-size: 13px;
+.recent-blog-item img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+   /*  margin-right: 10px; */
 }
-.recent-blog-date{
-    margin-right: 20px;
-    margin-top: 0;
+.recent-blog-item h5{
+    
 }
-.recent-blog-comments{
-    display: flex;
-    justify-content: baseline;
-    align-items: baseline;
-}
-.recent-blog-comments i{
-    margin-right: 7px;
-}
+
+

@@ -1,131 +1,88 @@
 <app-header1></app-header1>
 <div class="dashboard-container">
-    <div class="dashboard-menu">
-        <div class="menu-list">
-        <div class="menu-item" >
-            <i class="fa-solid fa-house"></i>
-            <a>Feed</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-blog"></i>
-            <a>Blog</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-comments"></i>
-            <a>Forum</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-user-doctor"></i>
-            <a>Veterinarians</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Daycare</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Grooming</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Boarding</a>
-        </div>
-    </div>
-    <hr>
-    <div class="pets">
-        <h4>My Pets</h4>
-        <div class="menu-item">
-            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-            <a>Boarding</a>
-        </div>
-        <div class="menu-item">
-            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-            <a>Boarding</a>
-        </div>
-    </div>
-    </div>
+    <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="feed-content-left">
             <div class="feed-content-left-header">
                 <h5>Blogs</h5>
                 <div class="categories">
-                    <a>All Pets</a>
+                    <a class="actif-categ">All Pets</a>
                     <a>Dogs</a>
                     <a>Cats</a>
                 </div>
             </div>
         <div class="blog-list">
-            <div class="blog-item">
+            <a routerLink="/blog" class="blog-item">
                 <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
                 <div class="blog-details">
                     <h5 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h5>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut...</p>
                     <div class="blog-engagement">
                         <div class="blog-engagement-item">
-                            <i class="fa-solid fa-paw"></i>
+                            <i class="fa-regular fa-heart"></i>
                             <h6>12</h6>
                         </div>
                         <div class="blog-engagement-item">
-                            <i class="fa-solid fa-paw"></i>
+                            <i class="fa-regular fa-comment"></i>
                             <h6>5</h6>
                         </div>
                     </div>
                 </div> 
-            </div>
+            </a>
         <hr>
-        <div class="blog-item">
+        <a class="blog-item">
             <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
             <div class="blog-details">
                 <h5 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h5>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut...</p>
                 <div class="blog-engagement">
                     <div class="blog-engagement-item">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <h6>12</h6>
                     </div>
                     <div class="blog-engagement-item">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-comment"></i>
                         <h6>5</h6>
                     </div>
                 </div>
             </div> 
-        </div>
+        </a>
     <hr>
-    <div class="blog-item">
+    <a class="blog-item">
         <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
         <div class="blog-details">
             <h5 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h5>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut...</p>
             <div class="blog-engagement">
                 <div class="blog-engagement-item">
-                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-regular fa-heart"></i>
                     <h6>12</h6>
                 </div>
                 <div class="blog-engagement-item">
-                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-regular fa-comment"></i>
                     <h6>5</h6>
                 </div>
             </div>
         </div> 
-    </div>
+    </a>
 <hr>
-<div class="blog-item">
+<a class="blog-item">
     <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
     <div class="blog-details">
         <h5 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h5>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut...</p>
         <div class="blog-engagement">
             <div class="blog-engagement-item">
-                <i class="fa-solid fa-paw"></i>
+                <i class="fa-regular fa-heart"></i>
                 <h6>12</h6>
             </div>
             <div class="blog-engagement-item">
-                <i class="fa-solid fa-paw"></i>
+                <i class="fa-regular fa-comment"></i>
                 <h6>5</h6>
             </div>
         </div>
     </div> 
-</div>
+</a>
         </div>
     </div>
     <div class="feed-content-right">
@@ -138,7 +95,7 @@
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <p>23</p>
                     </div>
                 </div>
@@ -148,7 +105,7 @@
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <p>23</p>
                     </div>
                 </div>
@@ -158,7 +115,7 @@
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <p>23</p>
                     </div>
                 </div>
@@ -168,7 +125,7 @@
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <p>23</p>
                     </div>
                 </div>

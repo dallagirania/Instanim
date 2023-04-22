@@ -17,6 +17,12 @@ import { ListdComponent } from './listd/listd.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { ForumComponent } from './forum/forum.component';
+import { DashboardVeterinaryComponent } from './dashboard-veterinary/dashboard-veterinary.component';
+import { DashboardDaycareComponent } from './dashboard-daycare/dashboard-daycare.component';
+import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-grooming.component';
+import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
+
 
 
 const routes: Routes = [
@@ -37,6 +43,11 @@ const routes: Routes = [
   { path: 'header1', component:ListdComponent},
   { path: 'blog-list', component:BlogListComponent},
   { path: 'blog', component:BlogComponent},
+  { path: 'forum', component:ForumComponent},
+  { path: 'dash-vet', component:DashboardVeterinaryComponent},
+  { path: 'dash-daycare', component:DashboardDaycareComponent},
+  { path: 'dash-boarding', component:DashboardBoardingComponent},
+  { path: 'dash-grooming', component:DashboardGroomingComponent},
 ];
 
 @NgModule({
