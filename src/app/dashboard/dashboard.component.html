@@ -1,49 +1,6 @@
 <app-header1></app-header1>
 <div class="dashboard-container">
-    <div class="dashboard-menu">
-        <div class="menu-list">
-        <div class="menu-item" >
-            <i class="fa-solid fa-house"></i>
-            <a>Feed</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-blog"></i>
-            <a>Blog</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-comments"></i>
-            <a>Forum</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-user-doctor"></i>
-            <a>Veterinarians</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Daycare</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Grooming</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-paw"></i>
-            <a>Boarding</a>
-        </div>
-    </div>
-    <hr>
-    <div class="pets">
-        <h4>My Pets</h4>
-        <div class="menu-item">
-            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-            <a>Boarding</a>
-        </div>
-        <div class="menu-item">
-            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-            <a>Boarding</a>
-        </div>
-    </div>
-    </div>
+    <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="feed-left-comtent">
         <div class="new-post">
@@ -53,15 +10,15 @@
             </div>
             <div class="new-post-option">
                 <div class="new-post-option-item">
-                    <i style="background-color: #dbeafe; color: #2f6aec;" class="fa-solid fa-image"></i>
+                    <i  class="fa-solid fa-image"></i>
                     <h6>Photo/Video</h6>
                 </div>
                 <div class="new-post-option-item">
-                    <i style="background-color: #d1fae5; color: #059669;"  class="fa-solid fa-user-tag"></i>
+                    <i  class="fa-solid fa-user-tag"></i>
                     <h6>Tag Friend</h6>
                 </div>
                 <div class="new-post-option-item">
-                    <i style="background-color: #fee2e2; color: #dc2626;"  class="fa-regular fa-face-smile"></i>
+                    <i  class="fa-regular fa-face-smile"></i>
                     <h6>Feeling/Activity</h6>
                 </div>
             </div>
@@ -169,7 +126,8 @@
         <div class="birthdays-div section-title1">
             <h5>Birthdays</h5>
             <div class="celebrate-div">
-                <img class="gift-img"src="assets/images/gift.png" alt="">
+                <!-- <img class="gift-img"src="assets/images/gift.png" alt=""> -->
+                <i class="fa-solid fa-gift"></i>
                 <p>Celebrate NouNou's Birthday!</p>
             </div>
         </div>

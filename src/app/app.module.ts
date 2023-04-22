@@ -26,6 +26,12 @@ import { ListdComponent } from './listd/listd.component';
 import { Header1Component } from './header1/header1.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { ForumComponent } from './forum/forum.component';
+import { DashboardVeterinaryComponent } from './dashboard-veterinary/dashboard-veterinary.component';
+import { DashboardDaycareComponent } from './dashboard-daycare/dashboard-daycare.component';
+import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-grooming.component';
+import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
 // import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
 
 // // configure Swiper to use modules
@@ -53,7 +59,13 @@ import { BlogComponent } from './blog/blog.component';
     ListdComponent,
     Header1Component,
     BlogListComponent,
-    BlogComponent, 
+    BlogComponent,
+    DashboardMenuComponent,
+    ForumComponent,
+    DashboardVeterinaryComponent,
+    DashboardDaycareComponent,
+    DashboardGroomingComponent,
+    DashboardBoardingComponent, 
     
     // SwiperModule
     
