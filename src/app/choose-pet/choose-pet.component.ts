@@ -109,7 +109,7 @@ export class ChoosePetComponent implements OnInit {
     }
 
     Continue(){
-      this.user=localStorage.getItem("user")
+    this.user=localStorage.getItem("user")
     this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
       this.liste=proprietaire.animal
       this.nbranim=proprietaire.animal.length
@@ -124,11 +124,7 @@ export class ChoosePetComponent implements OnInit {
             window.location.reload()
           })
       }
-      // this.total=this.liste2.length
-      
-      // this.liste2=this.liste.filter(offre=>offre.etat==true)
-      // this.liste3=this.liste2
-     
+    
     })
  
   

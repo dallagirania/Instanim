@@ -52,11 +52,7 @@ export class HeaderComponent implements OnInit {
             window.location.reload()
           })
       }
-      // this.total=this.liste2.length
-      
-      // this.liste2=this.liste.filter(offre=>offre.etat==true)
-      // this.liste3=this.liste2
-     
+    
     })
  
   
