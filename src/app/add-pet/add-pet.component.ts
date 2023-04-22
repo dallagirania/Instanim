@@ -7,11 +7,12 @@ import { NgToastService } from 'ng-angular-popup';
 import { Proprietaire } from '../Model/Proprietaire.model';
 
 @Component({
-  selector: 'app-choose-pet',
-  templateUrl: './choose-pet.component.html',
-  styleUrls: ['./choose-pet.component.css']
+  selector: 'app-add-pet',
+  templateUrl: './add-pet.component.html',
+  styleUrls: ['./add-pet.component.css']
 })
-export class ChoosePetComponent implements OnInit {
+export class AddPetComponent implements OnInit {
+
   liste : Animal[]=[]
   liste1 : Animal[]=[]
   nbranim=0;

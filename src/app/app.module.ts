@@ -9,8 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-
-import { ChoosePetComponent } from './choose-pet/choose-pet.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -26,19 +24,11 @@ import { ListdComponent } from './listd/listd.component';
 import { Header1Component } from './header1/header1.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
-// import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
-
-// // configure Swiper to use modules
-// Swiper.use([Navigation, Pagination,Scrollbar]);
-
-// init Swiper:
-// const swiper = new Swiper(".home1-services-slider", {observer: true,observeParents: true,slidesPerView:4,spaceBetween:24,loop:true,speed:1500,autoplay:{delay:2000,disableOnInteraction:false},navigation:{nextEl:".next-btn-1",prevEl:".prev-btn-1",},breakpoints:{280:{slidesPerView:1,spaceBetween:15},480:{slidesPerView:1},768:{slidesPerView:2},992:{slidesPerView:3},1200:{slidesPerView:4},1400:{slidesPerView:4},1600:{slidesPerView:4},}});
+import { AddPetComponent } from './add-pet/add-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-  
-    ChoosePetComponent,
     HomeComponent,
     ContactComponent,
     AboutUsComponent,
@@ -53,9 +43,8 @@ import { BlogComponent } from './blog/blog.component';
     ListdComponent,
     Header1Component,
     BlogListComponent,
-    BlogComponent, 
-    
-    // SwiperModule
+    BlogComponent,
+    AddPetComponent, 
     
   ],
   imports: [

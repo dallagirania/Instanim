@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChoosePetComponent } from './choose-pet/choose-pet.component';
+
 import { AuthGuard } from './Service/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -16,11 +16,12 @@ import { ListbComponent } from './listb/listb.component';
 import { ListdComponent } from './listd/listd.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
+import { AddPetComponent } from './add-pet/add-pet.component';
 
 
 const routes: Routes = [
  
-  { path: 'addanimal', component:ChoosePetComponent},
+  { path: 'add', component:AddPetComponent},
   { path: 'home', component:HomeComponent},
   { path: 'contact', component:ContactComponent},
   { path: 'aboutus', component:AboutUsComponent},
