@@ -33,6 +33,7 @@ import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-groom
 import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { BlogdetComponent } from './blogdet/blogdet.component';
     DashboardGroomingComponent,
     DashboardBoardingComponent,
     BlogHomeComponent,
-    BlogdetComponent, 
+    BlogdetComponent,
+    ProfileComponent, 
     
     // SwiperModule
     
