@@ -9,6 +9,7 @@ import { Animal } from '../Model/Animal.model';
 import { Veterinary } from '../Model/Veterinary.model';
 import { Contact } from '../Model/Contact.model';
 import { Services } from '../Model/Services.model';
+import { Publication } from '../Model/Publication.model';
 
 
 const httpOption={
@@ -64,6 +65,9 @@ export class CrudService {
 
   addContact(contact:Contact){
     return this.http.post<any>(this.apiUrl+"/contact", contact);
+  }
+  adddPub(publication:Publication){
+    return this.http.post<any>(this.apiUrl+"/publication", publication);
   }
 
   getSer():Observable<Services[]>{

@@ -3,10 +3,14 @@
     <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="feed-left-comtent">
+      <form [formGroup]="ajoutForm" (ngsubmit)="ajouterPublication()">
         <div class="new-post">
             <div class="write-new-post">
                 <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="post-profil-pic" />
                 <input type="text" name="" id="" placeholder="What's in your mind?">
+                <!-- <i class="fa-regular fa-paper-plane-top" style="color: #0d0d0d;"></i> -->
+                <!-- <i class="fa-sharp fa-solid fa-share"></i> -->
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
             </div>
             <div class="new-post-option">
                 <div class="new-post-option-item">
@@ -14,7 +18,8 @@
                     <h6>Photo/Video</h6>
                 </div>
                 <div class="new-post-option-item">
-                    <i  class="fa-solid fa-user-tag"></i>
+                    
+                    <i class="fa-solid fa-user-tag"></i>
                     <h6>Tag Friend</h6>
                 </div>
                 <div class="new-post-option-item">
@@ -23,6 +28,7 @@
                 </div>
             </div>
         </div>
+    </form>
         <div class="posts-section">
             <div class="post">
                 <div class="post-header">

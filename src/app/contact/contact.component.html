@@ -1,103 +1,107 @@
-<!-- 
-
-<div class="inner-page-banner">
-<div class="breadcrumb-vec-btm">
-<img class="img-fluid" src="assets/images/bg/inner-banner-btm-vec.png" alt="">
-</div>
-<div class="container">
-<div class="row justify-content-center align-items-center text-center">
-<div class="col-lg-6 align-items-center">
-<div class="banner-content">
-<h1>Contact Us</h1>
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-<li class="breadcrumb-item active" aria-current="page">Contact Us</li>
-</ol>
-</nav>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="banner-img d-lg-block d-none">
-<div class="banner-img-bg">
-<img class="img-fluid" src="assets/images/bg/inner-banner-vec.png" alt="">
-</div>
-<img class="img-fluid" src="assets/images/bg/inner-banner-img.png" alt="">
-</div>
-</div>
-</div>
-</div>
-</div> -->
 
 
 <div class="contact-pages pt-120 mb-120">
-<div class="container">
-<div class="row align-items-center g-lg-4 gy-5">
-<div class="col-lg-5">
-<div class="contact-left">
-<div class="hotline mb-80">
-<h3>Call Us Now</h3>
-<div class="icon">
-<img src="assets/images/icon/phone-icon4.svg" alt="">
-</div>
-<div class="info">
-<h6><a href="tel:+012-3456-789102">+216 72 158 569</a></h6>
-<h6><a href="tel:+012-3456-789102">+216 79 153 352</a></h6>
-</div>
-</div>
-<div class="location">
-<h3>Call Us Now</h3>
-<div class="icon">
-<img src="assets/images/icon/location4.svg" alt="">
-</div>
-<div class="info">
-<h6><a href="#">8020, Ave 01, Taffala,<br>
-Sousse, Tunisia</a></h6>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-7">
-<div class="contact-form">
-<h2>Have Any Questions</h2>
-<form>
-<div class="row">
-<div class="col-lg-12 mb-40">
-<div class="form-inner">
-<input type="text" placeholder="Enter your name">
-</div>
-</div>
-<div class="col-lg-6 mb-40">
-<div class="form-inner">
-<input type="text" placeholder="Enter your email">
-</div>
-</div>
-<div class="col-lg-6 mb-40">
-<div class="form-inner">
-<input type="text" placeholder="Subject">
-</div>
-</div>
-<div class="col-lg-12 mb-40">
-<div class="form-inner">
-<textarea placeholder="Your message"></textarea>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="form-inner">
-<button class="primary-btn1">Send Message <i class="bi bi-arrow-right"></i></button>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="row align-items-center g-lg-4 gy-5">
+      <div class="col-lg-5">
+        <div class="contact-left">
+          <div class="hotline mb-80">
+            <h3>Call Us Now</h3>
+            <div class="icon">
+              <img src="assets/images/icon/phone-icon4.svg" alt="" />
+            </div>
+            <div class="info">
+              <h6><a href="tel:+012-3456-789102">+216 72 158 569</a></h6>
+              <h6><a href="tel:+012-3456-789102">+216 79 153 352</a></h6>
+            </div>
+          </div>
+          <div class="location">
+            <h3>Call Us Now</h3>
+            <div class="icon">
+              <img src="assets/images/icon/location4.svg" alt="" />
+            </div>
+            <div class="info">
+              <h6>
+                <a href="#"
+                  >8020, Ave 01, Taffala,<br />
+                  Sousse, Tunisia</a
+                >
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="contact-form">
+          <h2>Have Any Questions</h2>
+          <form method="post" name="contactform" id="contactform"  [formGroup]="ajoutForm" (ngsubmit)="ajouterContact()">
+           
+             <fieldset >
+              <div *ngIf="user ;else cont">
+                <div class="row">
+               <div class="col-lg-6 mb-40">
+                <div class="form-inner">
+                  <input type="text"  [value]="currentuser.prenom"  readonly />
+                </div>
+              </div>
+              <div class="col-lg-6 mb-40">
+                <div class="form-inner">
+                  <input type="text" [value]="currentuser.nom"  readonly />
+                </div>
+              </div>
+              <div class="col-lg-12 mb-40">
+                <div class="form-inner">
+                  <input type="text" [value]="currentuser.email"  readonly/>
+                </div>
+              </div>
+             </div>
+            </div>
+              <ng-template #cont>
+                <div class="row">
+                <div class="col-lg-6 mb-40">
+                    <div class="form-inner">
+                      <input type="text" placeholder="Enter your first name"formControlName="nom"  />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 mb-40">
+                    <div class="form-inner">
+                      <input type="text" placeholder="Enter your last name" formControlName="prenom" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mb-40">
+                    <div class="form-inner">
+                      <input type="text" placeholder="Enter your email"formControlName="email"  />
+                    </div>
+                  </div>
+                </div>
+                </ng-template>
+              <div class="col-lg-12 mb-40">
+                <div class="form-inner">
+                  <input type="text" placeholder="Subject"formControlName="sujet"  />
+                </div>
+              </div>
+              <div class="col-lg-12 mb-40">
+                <div class="form-inner">
+                  <textarea placeholder="Your message"    formControlName="msg"></textarea>
+                </div>
+              </div>
+            </fieldset>
+              <div class="col-lg-12">
+                <div class="form-inner">
+                  <button class="primary-btn1" (click)="ajouterContact()">
+                    Send Message <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="location-map">
-<div class="vector">
-<img src="assets/images/bg/map-vector.png" alt="">
+  <div class="vector">
+    <img src="assets/images/bg/map-vector.png" alt="" />
+  </div>
 </div>
-
-</div>
-
