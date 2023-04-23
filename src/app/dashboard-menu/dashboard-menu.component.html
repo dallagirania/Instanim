@@ -1,44 +1,49 @@
-<div class="dashboard-menu">
-    <div class="menu-list">
+
+<div class="dashboard-menu" >
+  <div class="menu-list">
     <a routerLink="/dashboard" class="menu-item active">
-        <i class="fa-solid fa-house"></i>
-        <a>Feed</a>
+      <i class="fa-solid fa-house"></i>
+      <a>Feed</a>
     </a>
     <a routerLink="/blog-list" class="menu-item">
-        <i class="fa-solid fa-blog"></i>
-        <a>Blog</a>
+      <i class="fa-solid fa-blog"></i>
+      <a>Blog</a>
     </a>
     <a routerLink="/forum" class="menu-item">
-        <i class="fa-solid fa-comments"></i>
-        <a>Forum</a>
+      <i class="fa-solid fa-comments"></i>
+      <a>Forum</a>
     </a>
     <a routerLink="/dash-vet" class="menu-item">
-        <i class="fa-solid fa-user-doctor"></i>
-        <a>Veterinarians</a>
+      <i class="fa-solid fa-user-doctor"></i>
+      <a>Veterinarians</a>
     </a>
     <a routerLink="/dash-daycare" class="menu-item">
-        <i class="fa-solid fa-paw"></i>
-        <a>Daycare</a>
+      <i class="fa-solid fa-paw"></i>
+      <a>Daycare</a>
     </a>
     <a routerLink="/dash-grooming" class="menu-item">
-        <i class="fa-solid fa-paw"></i>
-        <a>Grooming</a>
+      <i class="fa-solid fa-paw"></i>
+      <a>Grooming</a>
     </a>
     <a routerLink="/dash-boarding" class="menu-item">
-        <i class="fa-solid fa-paw"></i>
-        <a>Boarding</a>
+      <i class="fa-solid fa-paw"></i>
+      <a>Boarding</a>
     </a>
-</div>
-<hr>
-<div class="pets">
+  </div>
+  <hr />
+  <div class="pets" >
     <h4>My Pets</h4>
-    <div class="menu-item">
-        <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-        <a>Boarding</a>
+    <div class="menu-item"*ngFor="let ser of liste " >
+      <!-- <img
+        alt="image"
+        src="assets/images/resumes-list-avatar-02.png"
+        class="petProfil"
+      />
+      <a>Boarding</a> -->
+      <a href="#"  >
+        <img src="assets/images/dash/dog1.jpg" class="petProfil" >{{ser.nom}}
+      </a>
     </div>
-    <div class="menu-item">
-        <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="petProfil" />
-        <a>Boarding</a>
-    </div>
-</div>
+  
+  </div>
 </div>

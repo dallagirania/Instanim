@@ -22,6 +22,8 @@ import { DashboardVeterinaryComponent } from './dashboard-veterinary/dashboard-v
 import { DashboardDaycareComponent } from './dashboard-daycare/dashboard-daycare.component';
 import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-grooming.component';
 import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
+import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { BlogdetComponent } from './blogdet/blogdet.component';
 
 
 
@@ -48,6 +50,8 @@ const routes: Routes = [
   { path: 'dash-daycare', component:DashboardDaycareComponent},
   { path: 'dash-boarding', component:DashboardBoardingComponent},
   { path: 'dash-grooming', component:DashboardGroomingComponent},
+  { path: 'bloghome', component:BlogHomeComponent},
+  { path: 'blogDet', component:BlogdetComponent},
 ];
 
 @NgModule({

@@ -6,8 +6,10 @@
     position: fixed;
     top: 70px;
     left: 0;
-    min-height: 100vh;
-
+    /* height: 900px; */
+    overflow-y: scroll;
+    height: 600px;
+   
 }
 .dashboard-menu hr{
     border: solid #bbbbbb;
@@ -42,10 +44,11 @@ color: var(--white);
     margin-right: 15px;
     width: 20px;
    }
-   .pets{
+.pets{
     border-top: solid black;
     border-width: 0 1px;
     padding: 1rem;
+  
 }
 .pets h4{
     padding: 0 15px;

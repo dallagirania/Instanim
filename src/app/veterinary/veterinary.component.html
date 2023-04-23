@@ -1,54 +1,65 @@
 <app-header></app-header>
 <div class="inner-page-banner">
-<div class="breadcrumb-vec-btm">
-<img class="img-fluid" src="assets/images/bg/inner-banner-btm-vec.png" alt="">
+  <div class="breadcrumb-vec-btm">
+    <img
+      class="img-fluid"
+      src="assets/images/bg/inner-banner-btm-vec.png"
+      alt=""
+    />
+  </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center text-center">
+      <div class="col-lg-6 align-items-center">
+        <div class="banner-content">
+          <h1>Our Veterinarians</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Veterinary
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="banner-img d-lg-block d-none">
+          <div class="banner-img-bg">
+            <img
+              class="img-fluid"
+              src="assets/images/bg/inner-banner-vec.png"
+              alt=""
+            />
+          </div>
+          <img
+            class="img-fluid"
+            src="assets/images/bg/inner-banner-img.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="container">
-<div class="row justify-content-center align-items-center text-center">
-<div class="col-lg-6 align-items-center">
-<div class="banner-content">
-<h1>Our Veterinarians</h1>
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="/home">Home</a></li>
-<li class="breadcrumb-item active" aria-current="page">Veterinary</li>
-</ol>
-</nav>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="banner-img d-lg-block d-none">
-<div class="banner-img-bg">
-<img class="img-fluid" src="assets/images/bg/inner-banner-vec.png" alt="">
-</div>
-<img class="img-fluid" src="assets/images/bg/inner-banner-img.png" alt="">
-</div>
-</div>
-</div>
-</div>
-</div>
-
 
 <div class="team-area two pt-120 mb-120">
-<div class="container">
-<div class="row gy-5">
-<div class="col-lg-3 col-md-4 col-sm-6"  *ngFor="let vet of liste ">
-<div class="single-team-card">
-<div class="member-img">
-    <img [src]="vet.img" class="img-fluid"  alt="">
-<!-- <img class="img-fluid" src="assets/images/bg/team/team-001.png" alt=""> -->
-</div>
-<div class="member-content">
-<h3>{{vet.nom}}{{' '}}{{vet.prenom}}</h3>
-<span >{{vet.email}}</span><br>
-<span >{{vet.tel}}</span><br>
-<span>{{vet.adresse}}</span>
-
- </div>
-</div>
-</div>
-
-</div>
-</div>
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let vet of liste">
+        <div class="single-team-card">
+          <div class="member-img">
+            <img [src]="vet.img" class="img-fluid" alt="" />
+            <!-- <img class="img-fluid" src="assets/images/bg/team/team-001.png" alt=""> -->
+          </div>
+          <div class="member-content">
+            <h3>{{ vet.nom }}{{ " " }}{{ vet.prenom }}</h3>
+            <span>{{ vet.email }}</span ><br />
+            <span>{{ vet.tel }}</span><br />
+            <span>{{ vet.adresse }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

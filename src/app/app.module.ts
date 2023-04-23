@@ -31,14 +31,8 @@ import { DashboardVeterinaryComponent } from './dashboard-veterinary/dashboard-v
 import { DashboardDaycareComponent } from './dashboard-daycare/dashboard-daycare.component';
 import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-grooming.component';
 import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
-// import Swiper, { Navigation, Pagination,Scrollbar } from 'swiper';
-
-// // configure Swiper to use modules
-// Swiper.use([Navigation, Pagination,Scrollbar]);
-
-// init Swiper:
-// const swiper = new Swiper(".home1-services-slider", {observer: true,observeParents: true,slidesPerView:4,spaceBetween:24,loop:true,speed:1500,autoplay:{delay:2000,disableOnInteraction:false},navigation:{nextEl:".next-btn-1",prevEl:".prev-btn-1",},breakpoints:{280:{slidesPerView:1,spaceBetween:15},480:{slidesPerView:1},768:{slidesPerView:2},992:{slidesPerView:3},1200:{slidesPerView:4},1400:{slidesPerView:4},1600:{slidesPerView:4},}});
-
+import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { BlogdetComponent } from './blogdet/blogdet.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +58,9 @@ import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-board
     DashboardVeterinaryComponent,
     DashboardDaycareComponent,
     DashboardGroomingComponent,
-    DashboardBoardingComponent, 
+    DashboardBoardingComponent,
+    BlogHomeComponent,
+    BlogdetComponent, 
     
     // SwiperModule
     
