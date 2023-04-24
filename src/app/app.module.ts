@@ -34,6 +34,7 @@ import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-board
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardBoardingComponent,
     BlogHomeComponent,
     BlogdetComponent,
-    ProfileComponent, 
+    ProfileComponent,
+    ChatComponent, 
     
     // SwiperModule
     

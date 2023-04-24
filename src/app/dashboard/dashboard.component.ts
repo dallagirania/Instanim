@@ -84,7 +84,7 @@ mydate=new Date()
       let data = this.ajoutForm.value;
       console.log(data);
       let pub = new Publication(
-         undefined ,data.text,this.imgURL,JSON.parse(JSON.stringify(this.currentProp)), data.etat,this.mydate.toISOString().slice(0,10));
+         undefined,this.mydate.toISOString().slice(0,10), data.etat,this.imgURL,data.text,JSON.parse(JSON.stringify(this.currentProp)));
          console.log(pub); 
          this.currentProp.publication.push(pub);
          console.log(55)
@@ -106,7 +106,7 @@ mydate=new Date()
             summary:'Ajout avec Succés'
           }); 
           this.router.navigate(['/dashboard']);
-          // window.location.reload();
+          window.location.reload();
 
         },
         err => {
@@ -120,6 +120,7 @@ mydate=new Date()
   
       )
       console.log(pub)
+      console.log('hiiiiiiiiiiiiiiiii')
     
   
     }}
@@ -129,16 +130,16 @@ mydate=new Date()
       this.currentProp=Proprietaire
     })
     // this.user=localStorage.getItem("user")
-    this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
-      this.liste=proprietaire.animal
-      this.nbranim=proprietaire.animal.length
-      console.log(this.nbranim)
+    // this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
+    //   this.liste=proprietaire.animal
+    //   this.nbranim=proprietaire.animal.length
+    //   console.log(this.nbranim)
      
-    })
-    this.service.getProp().subscribe(anim=>{
-      this.liste1=anim
-      // this.nbprop=anim.length
-    })
+    // })
+    // this.service.getProp().subscribe(anim=>{
+    //   this.liste1=anim
+    //   // this.nbprop=anim.length
+    // })
 
     this.service.getPublication().subscribe(ser=>{
       this.liste3=ser })

@@ -22,13 +22,13 @@ export class BlogdetComponent implements OnInit {
      private toast:NgToastService,
      private rout:ActivatedRoute)
       { 
-      this.user=this.service.userDetail()
+      // this.user=this.service.userDetail()
      }
 
    
 
    ngOnInit(): void {
-    this.user=localStorage.getItem("user")
+    // this.user=localStorage.getItem("user")
     this.id=this.rout.snapshot.params["id"]
     this.getBlog(this.id);
     // console.log(this.currentOffre.entreprise)

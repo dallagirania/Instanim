@@ -7,7 +7,7 @@
             <div class="write-new-post">
                 <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="post-profil-pic" />
                 <input type="text" name="" id="" placeholder="What's in your mind?" formControlName="text">
-                <button  id="post-btn"  (click)="ajouterPublication()" ><i class="fa-solid fa-share" ></i>Post</button>
+                <button  type="submit"  id="post-btn"  (click)="ajouterPublication()" ><i class="fa-solid fa-share" ></i>Post</button>
             </div>
             <div class="new-post-img">
                 <img [src]="imgURL" style="display: none" onload="this.style.display=''"/>
@@ -39,8 +39,8 @@
                 </div>
                 <div class="post-content">
                     <h5>{{ser.text}}</h5>
-                    <img alt="image" src="assets/images/bg/gallery/3col-big-img-01.png" class="post-image" />
-                     <!-- <img [src]="ser.image"  class="post-image" alt="image"> -->
+                    <!-- <img alt="image" src="assets/images/bg/gallery/3col-big-img-01.png" class="post-image" /> -->
+                     <img [src]="ser.image"  class="post-image" alt="image">
                 </div>
                 <div class="post-footer">
                 <div class="post-actions">

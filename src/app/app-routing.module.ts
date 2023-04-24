@@ -25,6 +25,7 @@ import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-board
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'bloghome', component:BlogHomeComponent},
   { path: 'blogDet/:id', component:BlogdetComponent},
   { path: 'profile', component:ProfileComponent},
+  { path: 'chat', component:ChatComponent},
 ];
 
 @NgModule({
