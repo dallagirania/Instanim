@@ -10,6 +10,7 @@ import { Veterinary } from '../Model/Veterinary.model';
 import { Contact } from '../Model/Contact.model';
 import { Services } from '../Model/Services.model';
 import { Publication } from '../Model/Publication.model';
+import { Blog } from '../Model/Blog.model';
 
 
 const httpOption={
@@ -69,8 +70,16 @@ export class CrudService {
   adddPub(publication:Publication){
     return this.http.post<any>(this.apiUrl+"/publication", publication);
   }
-
+  getPublication():Observable<Publication[]>{
+    return this.http.get<Publication[]>(this.apiUrl+"/publication");
+  }
   getSer():Observable<Services[]>{
     return this.http.get<Services[]>(this.apiUrl+"/service");
+  }
+  getBlog():Observable<Blog[]>{
+    return this.http.get<Blog[]>(this.apiUrl+"/blog");
+  }
+  public getBlogById(id : number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/blog/${id}`);
   }
 }

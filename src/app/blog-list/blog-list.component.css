@@ -76,6 +76,9 @@
     justify-content: baseline;
     align-items: start;
     color: #868686;
+    /* padding-bottom: 10px;
+    border-bottom: 1 solid black; */
+    padding:1rem 0;
 }
 .blog-item:hover{
     cursor: pointer;

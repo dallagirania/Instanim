@@ -5,18 +5,13 @@
         <div class="feed-content-left">
         <div class="blog-list">
             <div class="blog-item">
-                <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
+                <!-- <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img"> -->
+                <img [src]="currentBlog.img" alt="" class="blog-img">
                 <div class="blog-details">
-                    <h2 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                         ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                          suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
-                        
-                        Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-               
+                    <h2 class="blog-title">{{currentBlog.titre}}</h2>
+                    <!-- <p>{{currentBlog.description}}</p> -->
+                    <br><br>
+                    <p> {{currentBlog.text}}</p>
                 </div> 
             </div>
         </div>

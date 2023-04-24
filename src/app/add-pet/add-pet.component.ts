@@ -35,16 +35,16 @@ export class AddPetComponent implements OnInit {
       this.user=this.service.userDetail()
 
       let formControls = {
-        petName: new FormControl('', [
+        nom: new FormControl('', [
           Validators.required,
   
         ]),
        
-        petBirth: new FormControl('', [
+        race: new FormControl('', [
           Validators.required,
   
         ]),
-        petType: new FormControl('', [
+        daten: new FormControl('', [
           Validators.required,
   
         ]),
@@ -53,26 +53,24 @@ export class AddPetComponent implements OnInit {
       this.ajoutForm= this.fb.group(formControls)
     }
     
-    get petName() { return this.ajoutForm.get('petName') }
-    get petType() { return this.ajoutForm.get('petType') }
-    get petBirth() { return this.ajoutForm.get('petBirth') }
-  
+    get nom() { return this.ajoutForm.get('nom') }
+    get race() { return this.ajoutForm.get('race') }
+    get daten() { return this.ajoutForm.get('daten') }
    
     ajouterAnimal() {
       let data = this.ajoutForm.value;
       console.log(data);
       let anim = new Animal(
-         undefined ,data.petName, data.petType,JSON.parse(JSON.stringify(this.currentProp)), data.petBirth);
+         undefined ,data.nom, data.race,JSON.parse(JSON.stringify(this.currentProp)), data.daten,data.poids);
          console.log(anim); 
          this.currentProp.animal.push(anim);
          console.log(55)
          this.service.updateProp(this.currentProp.id!, this.currentProp)
-      if(data.petName==0||data.petType==0||data.petBirth==0)
+      if(data.nom==0||data.race==0||data.daten==0)
       {this.toast.info({
         detail:'error msg !!',
         summary:'remplir votre champs'
-      });
-    }else {    
+      });}else {    
       this.service.addAnimal(anim).subscribe(
 
   
@@ -82,6 +80,7 @@ export class AddPetComponent implements OnInit {
             detail:'success msg',
             summary:'Ajout avec Succés'
           }); 
+  
           this.router.navigate(['/dashboard']);
         },
         err => {
@@ -114,7 +113,7 @@ export class AddPetComponent implements OnInit {
       if(this.nbranim==0)
         {this.toast.info({
           detail:'error msg !!',
-          summary:'Vous Devez Ajouter Votre Compagnant'
+          summary:'You Must Add Your Pet'
         });}
         else{
           this.router.navigate(["/dashboard"]).then(()=>{

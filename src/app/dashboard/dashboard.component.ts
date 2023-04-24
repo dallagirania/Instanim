@@ -3,7 +3,6 @@ import { CrudService } from '../Service/crud.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
-import { Animal } from '../Model/Animal.model';
 import { Proprietaire } from '../Model/Proprietaire.model';
 import { Publication } from '../Model/Publication.model';
 
@@ -16,8 +15,10 @@ export class DashboardComponent implements OnInit {
   
 mydate=new Date()
   user:any
-  liste:Animal[]=[]
+  photoLink ="assets/images/h1-newsletter-bg.png";
+  liste:Publication[]=[]
   liste1:Proprietaire[]=[]
+  liste3:Publication[]=[]
   ajoutForm: FormGroup
   nbranim=0;
   userFile:any
@@ -43,18 +44,14 @@ mydate=new Date()
           Validators.required,
   
         ]),
-        datepub: new FormControl('', [
-          Validators.required,
-  
-        ]),
+       
+      
       
       }
       this.ajoutForm= this.fb.group(formControls)
     }
 
     get text() { return this.ajoutForm.get('text') }
-   
-    get datepub() { return this.ajoutForm.get('datepub') }
     get image() { return this.ajoutForm.get('image') }
 
 
@@ -83,30 +80,34 @@ mydate=new Date()
     }
 
     ajouterPublication() {
+      console.log("hi")
       let data = this.ajoutForm.value;
       console.log(data);
       let pub = new Publication(
          undefined ,data.text,this.imgURL,JSON.parse(JSON.stringify(this.currentProp)), data.etat,this.mydate.toISOString().slice(0,10));
          console.log(pub); 
-         this.currentProp.animal.push(pub);
+         this.currentProp.publication.push(pub);
          console.log(55)
          this.service.updateProp(this.currentProp.id!, this.currentProp)
-      if(data.petName==0||data.petType==0||data.petBirth==0)
+         console.log(22222222)
+      if(data.text==0||this.imgURL==0)
       {this.toast.info({
         detail:'error msg !!',
         summary:'remplir votre champs'
       });
     }else {    
       this.service.adddPub(pub).subscribe(
-
+      
   
         res => {
-          console.log(res);
+          console.log(this.imgURL);
           this.toast.success({
             detail:'success msg',
             summary:'Ajout avec Succés'
           }); 
           this.router.navigate(['/dashboard']);
+          // window.location.reload();
+
         },
         err => {
           console.log(err);
@@ -118,11 +119,16 @@ mydate=new Date()
         }
   
       )
+      console.log(pub)
     
   
     }}
   ngOnInit(): void {
     this.user=localStorage.getItem("user")
+    this.service.getPropById(this.service.userDetail().id).subscribe(Proprietaire=>{
+      this.currentProp=Proprietaire
+    })
+    // this.user=localStorage.getItem("user")
     this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
       this.liste=proprietaire.animal
       this.nbranim=proprietaire.animal.length
@@ -133,8 +139,17 @@ mydate=new Date()
       this.liste1=anim
       // this.nbprop=anim.length
     })
-  
- 
-  
+
+    this.service.getPublication().subscribe(ser=>{
+      this.liste3=ser })
   }
+  // onFileChanged(e:any) {
+  //   if(e.target.files){
+  //     var reader = new FileReader();
+  //     reader.readAsDataURL(e.target.files[0]);
+  //     reader.onload=(event:any)=>{
+  //       this.photoLink=event.target.result;
+  //     }
+  //   }
+  // }
 }

@@ -6,7 +6,7 @@ export class Animal{
         public nom?:String ,
         public race?:String ,
         public proprietaire?:Proprietaire,
-        public age?:number ,
+        public daten?:string ,
         public poids?:number ,
         ){
 

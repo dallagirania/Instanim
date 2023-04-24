@@ -12,11 +12,12 @@
                 </div>
             </div>
         <div class="blog-list">
-            <a routerLink="/blog" class="blog-item">
-                <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
+            <a class="blog-item"  *ngFor="let vet of liste">
+                <!-- <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img"> -->
+                <img  [src]="vet.img"  class="blog-img" alt="" />
                 <div class="blog-details">
-                    <h5 class="blog-title">Interesting JavaScript and CSS Libraries in 2021 you should be know</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut...</p>
+                    <h5 class="blog-title"  [routerLink]="['/blog',vet.id]">{{vet.titre}}</h5>
+                    <p>{{vet.description}}</p>
                     <div class="blog-engagement">
                         <div class="blog-engagement-item">
                             <i class="fa-regular fa-heart"></i>
@@ -28,8 +29,11 @@
                         </div>
                     </div>
                 </div> 
+                
             </a>
-        <hr>
+        
+        
+            <!-- <hr>
         <a class="blog-item">
             <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img">
             <div class="blog-details">
@@ -82,7 +86,7 @@
             </div>
         </div>
     </div> 
-</a>
+</a> -->
         </div>
     </div>
     <div class="feed-content-right">

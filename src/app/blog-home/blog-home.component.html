@@ -15,12 +15,12 @@
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-lg-6 align-items-center">
             <div class="banner-content">
-              <h1>Blog Grid Sidebar</h1>
+              <h1>Blogs</h1>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    Blog Grid Sidebar
+                    Blogs 
                   </li>
                 </ol>
               </nav>
@@ -51,16 +51,13 @@
         <div class="row g-lg-4 gy-5 justify-content-center">
           <div class="col-lg-8">
             <div class="row g-lg-4 gy-5 justify-content-center mb-70">
-              <div class="col-lg-6 col-md-6 col-sm-10">
+              <div class="col-lg-6 col-md-6 col-sm-10" *ngFor="let blog of liste">
                 <div class="h1-blog-card">
                   <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-01.png"
-                      alt=""
-                    />
+                    <!-- <img class="img-fluid" src="assets/images/bg/blog/blog-grid-01.png" alt="" /> -->
+                    <img  [src]="blog.img" class="img-fluid" alt="" />
                     <div class="category">
-                      <a href="blog-grid.html">Dog bording</a>
+                      <a href="blog-grid.html">{{blog.categorie}}</a>
                     </div>
                   </div>
                   <div class="blog-content">
@@ -68,189 +65,12 @@
                       <a href="blog-grid.html">August 13, 2022</a>
                     </div>
                     <h4>
-                      <a href="/blogDet"
-                        >lobortis pharetra In necat boi risuse osae that one far
-                        This fox.</a
-                      >
+                      <a  [routerLink]="['/blogDet',blog.id]">{{blog.titre}}</a>
                     </h4>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-02.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Day Care</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">August 10, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="/blogDet"
-                        >Donec venenatis ex id nibh iaculisoni Clonal interdum
-                        Curabitur.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-03.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Grooming</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">August 05, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >Orci varius natoque penatibus etmal dis parturient
-                        montes.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-04.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Pet Checkup</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">June 25, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >gravida ut malesuada in tristique sed eros Nunc sed
-                        efficitur.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-05.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Medical Care</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">June 15, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >luctus justo quis feugiat lacus orcha ornare augue
-                        Integer.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-06.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Pet Grong</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">June 02, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >malesuada nibh Nulla lacinia miegetol bibendum
-                        euismod.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-07.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Grooming</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">May 30, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >vitae tortor Maecenas in dui eget orci dapibus
-                        imperdiet.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10">
-                <div class="h1-blog-card">
-                  <div class="blog-img">
-                    <img
-                      class="img-fluid"
-                      src="assets/images/bg/blog/blog-grid-08.png"
-                      alt=""
-                    />
-                    <div class="category">
-                      <a href="blog-grid.html">Day Care</a>
-                    </div>
-                  </div>
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog-grid.html">May 21, 2022</a>
-                    </div>
-                    <h4>
-                      <a href="blog-details.html"
-                        >semper Praesent sit amet nisi quison massa euismod
-                        facilisis.</a
-                      >
-                    </h4>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <!-- <div class="row">
               <div class="col-lg-12 d-flex justify-content-center">
@@ -397,7 +217,7 @@
                     <div class="wi">
                       <a href="blog-details.html"
                         ><img
-                          src="assets/images/blog/blog-sidebar-2.png"
+                          src="assets/images/bg/blog/blog-sidebar-2.png"
                           alt="image"
                       /></a>
                     </div>
@@ -414,7 +234,7 @@
                     <div class="wi">
                       <a href="blog-details.html"
                         ><img
-                          src="assets/images/blog/blog-sidebar-3.png"
+                          src="assets/images/bg/blog/blog-sidebar-3.png"
                           alt="image"
                       /></a>
                     </div>
@@ -480,6 +300,4 @@
 
     <app-footer></app-footer>
   </body>
-
-  <!-- Mirrored from demo.egenslab.com/html/scooby/preview/blog-grid-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Apr 2023 07:33:40 GMT -->
 </html>

@@ -1,4 +1,5 @@
 import { Animal } from "./Animal.model";
+import { Publication } from "./Publication.model";
 
 export class Proprietaire{
     constructor(
@@ -8,7 +9,8 @@ export class Proprietaire{
         public email?:String,
         public mdp?:String,
         public img?:String ,
-        public animal:Animal[]=[]
+        public animal:Animal[]=[],
+        public publication:Publication[]=[]
         
         ){
 

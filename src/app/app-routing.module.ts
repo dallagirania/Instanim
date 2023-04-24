@@ -24,6 +24,7 @@ import { DashboardGroomingComponent } from './dashboard-grooming/dashboard-groom
 import { DashboardBoardingComponent } from './dashboard-boarding/dashboard-boarding.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -44,14 +45,15 @@ const routes: Routes = [
   { path: 'listeDaycare', component:ListdComponent},
   { path: 'header1', component:ListdComponent},
   { path: 'blog-list', component:BlogListComponent},
-  { path: 'blog', component:BlogComponent},
+  { path: 'blog/:id', component:BlogComponent},
   { path: 'forum', component:ForumComponent},
   { path: 'dash-vet', component:DashboardVeterinaryComponent},
   { path: 'dash-daycare', component:DashboardDaycareComponent},
   { path: 'dash-boarding', component:DashboardBoardingComponent},
   { path: 'dash-grooming', component:DashboardGroomingComponent},
   { path: 'bloghome', component:BlogHomeComponent},
-  { path: 'blogDet', component:BlogdetComponent},
+  { path: 'blogDet/:id', component:BlogdetComponent},
+  { path: 'profile', component:ProfileComponent},
 ];
 
 @NgModule({

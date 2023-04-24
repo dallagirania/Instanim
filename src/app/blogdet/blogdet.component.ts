@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { Blog } from '../Model/Blog.model';
+import { CrudService } from '../Service/crud.service';
 
 @Component({
   selector: 'app-blogdet',
@@ -6,10 +11,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blogdet.component.css']
 })
 export class BlogdetComponent implements OnInit {
+  token:any
+  id: any;
+  currentBlog=new Blog()
+  user:any;
+   constructor(
+      private service: CrudService,
+     private router: Router,
+     private fb: FormBuilder,
+     private toast:NgToastService,
+     private rout:ActivatedRoute)
+      { 
+      this.user=this.service.userDetail()
+     }
 
-  constructor() { }
+   
 
-  ngOnInit(): void {
-  }
-
-}
+   ngOnInit(): void {
+    this.user=localStorage.getItem("user")
+    this.id=this.rout.snapshot.params["id"]
+    this.getBlog(this.id);
+    // console.log(this.currentOffre.entreprise)
+   }
+   getBlog(id:number)
+   {
+     this.service.getBlogById(id).subscribe(data=>{
+       this.currentBlog=data
+ 
+     })
+   } 
+ }
