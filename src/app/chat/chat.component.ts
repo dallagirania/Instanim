@@ -19,7 +19,7 @@ export class ChatComponent implements OnInit {
     const messages = document.getElementById("chat-messages") as HTMLElement;
     console.log(input.value);
 
-    const apiKey = "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";
+    const apiKey = "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" ;
     const message = input.value;
     input.value = "";
 
