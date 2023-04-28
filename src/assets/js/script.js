@@ -1,30 +1,39 @@
+// const form = document.getElementById("chat-form");
+// const input = document.getElementById("chat-input");
+// const messages = document.getElementById("chat-messages");
+// const apiKey = "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";
 
+// form.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+//   const message = input.value;
+//   input.value = "";
 
-function settingsMenuToggle(){
-    var settingsMenu=document.querySelector(".settings-menu");
-    settingsMenu.classList.toggle("settings-menu-height");
-    console.log("hi")
+//   messages.innerHTML += `<div class="message user-message">
+//   <img src="../icons/user.png" alt="user icon"> <span>${message}</span>
+//   </div>`;
 
-}   
-function dark() {
-    var darkBtn=document.getElementById("dark-btn");
-    darkBtn.classList.toggle("dark-btn-on");
-    document.body.classList.toggle("dark-theme");
-    if(localStorage.getItem("theme")=="light"){
-        localStorage.setItem("theme","dark");
-    }
-    else{
-        localStorage.setItem("theme","light");
-    }
-}
-if(localStorage.getItem("theme")=="light"){
-    darkBtn.classList.remove("dark-btn-on");
-    document.body.classList.remove("dark-theme");
-}
-else if(localStorage.getItem("theme")=="dark"){
-    darkBtn.classList.add("dark-btn-on");
-    document.body.classList.add("dark-theme");
-}
-else{
-    localStorage.setItem("theme","light");
-}
+//   // Use axios library to make a POST request to the OpenAI API
+//   const response = await axios.post(
+//     "https://api.openai.com/v1/completions",
+//     {
+//       prompt: message,
+//       model: "text-davinci-003",
+//       temperature: 0,
+//       max_tokens: 1000,
+//       top_p: 1,
+//       frequency_penalty: 0.0,
+//       presence_penalty: 0.0,
+//     },
+//     {
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${apiKey}`,
+//       },
+//     }
+//   );
+//   const chatbotResponse = response.data.choices[0].text;
+
+//   messages.innerHTML += `<div class="message bot-message">
+//   <img src="../icons/chatbot.png" alt="bot icon"> <span>${chatbotResponse}</span>
+//   </div>`;
+// });

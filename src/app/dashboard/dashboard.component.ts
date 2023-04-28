@@ -97,14 +97,12 @@ mydate=new Date()
       });
     }else {    
       this.service.adddPub(pub).subscribe(
-      
-  
         res => {
           console.log(this.imgURL);
-          this.toast.success({
-            detail:'success msg',
-            summary:'Ajout avec Succés'
-          }); 
+          // this.toast.success({
+          //   detail:'success msg',
+          //   summary:'Ajout avec Succés'
+          // }); 
           this.router.navigate(['/dashboard']);
           window.location.reload();
 
@@ -113,7 +111,7 @@ mydate=new Date()
           console.log(err);
           this.toast.error({
             detail:'error msg',
-            summary:'verifier votre formulaire !'
+            summary:'verifier votre Publication !'
           });
   
         }
