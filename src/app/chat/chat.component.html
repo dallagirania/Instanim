@@ -1,23 +1,54 @@
-
-
-
-
-    <!----------main-content----------->
-    <div class="main-content" style=" flex-basis: 100%;">
-
-        <div id="chat-window">
-            <div class="main-title">ASK CHAT-GPT</div>
-            <div id="chat-messages"></div>
-            <form id="chat-form">
-              <input  type="text"   id="chat-input"  autocomplete="off"  placeholder="Type your message here"   required />
-              <button type="submit">Send</button>
-            </form>
-          </div>
-
+<script src="https://kit.fontawesome.com/d9aba00959.js" crossorigin="anonymous"></script>
+<app-header1></app-header1>
+<div class="dashboard-container">
+    <app-dashboard-menu></app-dashboard-menu>
+    <div class="feed-content">
+        <div class="feed-content-left">
+            <div class="feed-content-left-header">
+                <h5>ChatBot</h5>
+            </div>
+        <div class="blog-list">
+            <div id="chat-window">
+                <div class="main-title">ASK CHAT-GPT</div>
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                  <input
+                    type="text"
+                    id="chat-input"
+                    autocomplete="off"
+                    placeholder="Type your message here"
+                    required
+                  />
+                  <button type="submit" (click)="sendMessage()">Send</button>
+                </form>
+              </div>
+        </div>
     </div>
-    
-    
-    
-
-
-
+    <!--<div class="feed-content-right">
+        <div class="recent-blog-title">
+            <h4>Top Contributors</h4>
+            <p>People who started the most discussions on Talks.</p>
+        </div>
+        <div class="recent-blog-list">
+            <div class="recent-blog-item">
+                <img src="assets/images/resumes-list-avatar-02.png" alt="" >
+                <span>Alex Dolgove</span>
+                <i class="fa-regular fa-comment-dots"></i>
+                <span>137</span>
+            </div>
+            <div class="recent-blog-item">
+                <img src="assets/images/resumes-list-avatar-02.png" alt="" >
+                <span>Rania Dallagi</span>
+                <i class="fa-regular fa-comment-dots"></i>
+                <span>137</span>
+            </div>
+            <div class="recent-blog-item">
+                <img src="assets/images/resumes-list-avatar-02.png" alt="" >
+                <span>Fadoua Haj</span>
+                <i class="fa-regular fa-comment-dots"></i>
+                <span>137</span>
+            </div>
+        </div>
+    </div>-->
+    </div>
+</div>
