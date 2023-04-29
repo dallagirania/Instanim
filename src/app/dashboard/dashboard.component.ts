@@ -19,6 +19,8 @@ mydate=new Date()
   liste:Publication[]=[]
   liste1:Proprietaire[]=[]
   liste3:Publication[]=[]
+  liste4:Publication[]=[]
+  liste5:Publication[]=[]
   ajoutForm: FormGroup
   nbranim=0;
   userFile:any
@@ -97,14 +99,12 @@ mydate=new Date()
       });
     }else {    
       this.service.adddPub(pub).subscribe(
-      
-  
         res => {
           console.log(this.imgURL);
-          this.toast.success({
-            detail:'success msg',
-            summary:'Ajout avec Succés'
-          }); 
+          // this.toast.success({
+          //   detail:'success msg',
+          //   summary:'Ajout avec Succés'
+          // }); 
           this.router.navigate(['/dashboard']);
           window.location.reload();
 
@@ -113,7 +113,7 @@ mydate=new Date()
           console.log(err);
           this.toast.error({
             detail:'error msg',
-            summary:'verifier votre formulaire !'
+            summary:'verifier votre Publication !'
           });
   
         }
@@ -142,7 +142,10 @@ mydate=new Date()
     // })
 
     this.service.getPublication().subscribe(ser=>{
-      this.liste3=ser })
+      this.liste3=ser 
+      this.liste4=this.liste3.reverse()
+      this.liste5=this.liste4.filter(ser=>ser.etat==true)
+      })
   }
   // onFileChanged(e:any) {
   //   if(e.target.files){

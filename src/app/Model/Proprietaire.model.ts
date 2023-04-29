@@ -9,6 +9,7 @@ export class Proprietaire{
         public email?:String,
         public mdp?:String,
         public img?:String ,
+        public photo?:String ,
         public animal:Animal[]=[],
         public publication:Publication[]=[]
         

@@ -57,7 +57,7 @@ const routes: Routes = [
   { path: 'dash-grooming', component:DashboardGroomingComponent},
   { path: 'bloghome', component:BlogHomeComponent},
   { path: 'blogDet/:id', component:BlogdetComponent},
-  { path: 'profile', component:ProfileComponent},
+  { path: 'profile/:id', component:ProfileComponent},
   { path: 'chat', component:ChatComponent},
   { path: 'todolists', component:TodoListsComponent},
   { path: 'todolists/:important', component:ImportantTodoComponent},

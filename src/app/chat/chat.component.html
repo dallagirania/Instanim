@@ -3,24 +3,35 @@
     <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="feed-content-left">
-            <div class="feed-content-left-header">
+            <!-- <div class="feed-content-left-header">
                 <h5>ChatBot</h5>
-            </div>
+            </div> -->
         <div class="blog-list">
             <div id="chat-window">
                 <div class="main-title">ASK CHAT-GPT</div>
                 <div id="chat-messages"></div>
                 <form id="chat-form">
-                  <input
-                    type="text"
-                    id="chat-input"
-                    autocomplete="off"
-                    placeholder="Type your message here"
-                    required
-                  />
-                  <button type="submit" (click)="sendMessage()">Send</button>
+                  <input type="text"id="chat-input"   autocomplete="off" placeholder="Type your message here" />
+                    <button type="submit" (click)="sendMessage()">Send</button>     
                 </form>
               </div>
+        </div>
+    </div>
+    <div class="feed-content-right">
+        <div class="birthdays-div section-title1">
+            <h5>Birthdays</h5>
+            <div class="celebrate-div">
+                <!-- <img class="gift-img"src="assets/images/gift.png" alt=""> -->
+                <i class="fa-solid fa-gift"></i>
+                <p>Celebrate NouNou's Birthday!</p>
+            </div>
+        </div>
+        <div class="birthdays-div section-title1">
+            <h5>Cure & Diseases</h5>
+            <div class="celebrate-div">
+                <!-- <img class="gift-img"src="assets/images/gift.png" alt=""> -->
+                <p> Canine distemper!</p>
+            </div>
         </div>
     </div>
     <!--<div class="feed-content-right">

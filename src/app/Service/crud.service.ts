@@ -36,6 +36,15 @@ export class CrudService {
   loginproprietaire(proprietaire: Proprietaire) {
     return this.http.post<any>(this.loginProprietaireUrl, proprietaire);
   }
+
+  getPropById(id : number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/proprietaire/${id}`);
+  }
+  updateProp(id:number,proprietaire:Proprietaire):Observable<Proprietaire>{
+    const Url=`${this.apiUrl+"/proprietaire"}/${id}`
+    return this.http.put<Proprietaire>(Url,proprietaire,httpOption)
+  }
+
   getVet():Observable<Veterinary[]>{
     return this.http.get<Veterinary[]>(this.apiUrl+"/vet");
   }
@@ -47,13 +56,7 @@ export class CrudService {
     let decotoken=this.helper.decodeToken(token);
     return decotoken.data
   }
-  getPropById(id : number):Observable<any>{
-    return this.http.get<any>(`${this.apiUrl}/proprietaire/${id}`);
-  }
-  updateProp(id:number,proprietaire:Proprietaire):Observable<Proprietaire>{
-    const Url=`${this.apiUrl+"/proprietaire"}/${id}`
-    return this.http.put<Proprietaire>(Url,proprietaire,httpOption)
-  }
+ 
   addAnimal(animal:Animal){
     return this.http.post<any>(this.apiUrl+"/animal", animal);
   }

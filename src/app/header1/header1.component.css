@@ -1,3 +1,8 @@
 .notification{
     position: absolute; top: -5px;right: -5px; border-radius: 50%;background-color: var(--primary-color2); z-index: 100;color: white; font-size: 12px; padding:0 4px;
 }
+ #main-menu1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 

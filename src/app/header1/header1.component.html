@@ -1,14 +1,10 @@
 <header class="header-area style-1">
-  <div
-    class="container-fluid d-flex justify-content-between align-items-center"
-  >
+  <div  class="container-fluid d-flex justify-content-between align-items-center">
     <div class="header-logo">
-      <a routerLink="/home"
-        ><img alt="image" class="img-fluid" img src="assets/images/logo.png"
-      /></a>
+      <a routerLink="/home"><img alt="image" class="img-fluid" img src="assets/images/logo.png"/></a>
     </div>
 
-    <div class="nav-right d-flex jsutify-content-end align-items-center">
+    <div class="nav-right d-flex jsutify-content-end align-items-center" style="padding-left: 600px;">
       <ul>
         <li class="search-btn">
           <a>
@@ -39,34 +35,37 @@
         </li>
         <li style="position: relative">
           <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512"
-            >
-              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-              <path
-                d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512" > 
+            <path  d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/>
             </svg>
           </a>
           <div class="notification">2</div>
         </li>
-
-        <!-- <li>
-          
-          <a routerLink="/profile"> <img alt="image"  src="assets/images/resumes-list-avatar-02.png"  class="profilPic"style="width: 100%; border-radius: 50%" /></a>
-        </li> -->
+        <li style="position: relative">
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512">
+              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path  d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z" />
+            </svg>
+          </a>
+        </li>
       </ul>
+     
+    
       
       <div class="sidebar-button mobile-menu-btn">
         <i class="bi bi-list"></i>
       </div>
+   
     </div>
-    <div  class="main-menu" >
+    <div  class="main-menu main-menu1" >
       <ul class="menu-list">
       <li class="menu-item-has-children">
-          <a>{{currentuser.nom }}{{'    '}}{{currentuser.prenom}}</a><i class="bi bi-plus dropdown-icon"></i>
+        <a routerLink="/home"><img alt="image" src="assets/images/resumes-list-avatar-02.png" class="profilPic"  style="width:30px;height: 30px; border-radius: 50%;"/> </a>
+        <!-- <a>{{currentuser.nom }}{{'    '}}{{currentuser.prenom}}</a><i class="bi bi-plus dropdown-icon"></i> -->
           <ul class="sub-menu">
             <li><a routerLink="/home">Home </a></li>
-            <li><a routerLink="/profile">Profile </a></li>
+            <li><a [routerLink]="['/profile',currentuser.id]">Profile </a></li>
             <li><a (click)="logOut()">LogOut</a></li>
           </ul>
         </li>
