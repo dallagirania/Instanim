@@ -187,3 +187,6 @@
 .todolists-title button{
     background: none;
 }
+.todo-element{
+    margin-bottom: 10px;
+}

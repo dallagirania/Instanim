@@ -19,21 +19,12 @@ export class ChatComponent implements OnInit {
     const messages = document.getElementById("chat-messages") as HTMLElement;
     console.log(input.value);
 
-<<<<<<< HEAD
     const apiKey = "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";
     const message = input.value;
     input.value = "";
 
     messages.innerHTML += `<div class="message user-message" style="background:#FF7F18; color:#FFFFFF ; border-radius:20%;">
     <i class="fa-regular fa-user" style="color: #000000;"></i> <span>${message}</span>
-=======
-    const apiKey = "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" ;
-    const message = input.value;
-    input.value = "";
-
-    messages.innerHTML += `<div class="message user-message">
-    <img src="../../assets/icons/user1.png" alt="user icon"> <span>${message}</span>
->>>>>>> 33e575533ecbc37580efc54e68e476f304e1d674
     </div>`;
     const response = await axios.post(
       "https://api.openai.com/v1/completions",
@@ -55,13 +46,8 @@ export class ChatComponent implements OnInit {
     );
     const chatbotResponse = response.data.choices[0].text;
 
-<<<<<<< HEAD
     messages.innerHTML += `<div class="message bot-message" >
     <i class="fa-brands fa-bots" style="color: #ff7f18;"></i> <span>${chatbotResponse}</span>
-=======
-    messages.innerHTML += `<div class="message bot-message">
-    <img src="../../assets/icons/chat1.png" alt="bot icon"> <span>${chatbotResponse}</span>
->>>>>>> 33e575533ecbc37580efc54e68e476f304e1d674
     </div>`;
     
   } 
