@@ -26,6 +26,9 @@ import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
+import { TodoListsComponent } from './todo-lists/todo-lists.component';
+import { ImportantTodoComponent } from './important-todo/important-todo.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 
 
@@ -56,6 +59,10 @@ const routes: Routes = [
   { path: 'blogDet/:id', component:BlogdetComponent},
   { path: 'profile', component:ProfileComponent},
   { path: 'chat', component:ChatComponent},
+  { path: 'todolists', component:TodoListsComponent},
+  { path: 'todolists/:important', component:ImportantTodoComponent},
+  { path: 'addtodo', component:AddTodoComponent},
+
 ];
 
 @NgModule({
