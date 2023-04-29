@@ -1,5 +1,9 @@
+import { Proprietaire } from '../Model/Proprietaire.model';
 import { Component, OnInit } from '@angular/core';
-
+import { CrudService } from '../Service/crud.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,11 +15,21 @@ export class ProfileComponent implements OnInit {
   profil_img="";
   gradientColorStyle="";
   colorful=false;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  id: any;
+  currentAdmin=new Proprietaire()
+  userFile:any
+   message?:String
+   imgURL:any
+   imagePath:any
+   constructor(
+      private service: CrudService,
+     private router: Router,
+     private fb: FormBuilder,
+     private toast:NgToastService,
+     private rout:ActivatedRoute) { 
+   
+     }
+ 
   onFileChanged(e:any) {
     if(e.target.files){
       var reader = new FileReader();
@@ -56,7 +70,30 @@ export class ProfileComponent implements OnInit {
     }
    
   }
+  modifierProp(){
+    this.id=this.rout.snapshot.params["id"];
+    console.log(this.id);
+    this.service.updateProp(this.id,this.currentAdmin).subscribe(admin=>{
+      this.service.loginproprietaire(this.currentAdmin).subscribe(res=>{
+        let token=res.token;
+        localStorage.setItem("mytoken",token)
+      })
+      this.router.navigate(["/profile"]).then(()=>{
+        window.location.reload();
+      })
+    })
+   }
+   ngOnInit(): void {
+    this.id=this.rout.snapshot.params["id"];
+    this.getAdmin(this.id);
+  }
+  getAdmin(id:number)
+  {
+    this.service.getPropById(id).subscribe(data=>{
+      this.currentAdmin=data
 
+    })
+  }
 
 }
 

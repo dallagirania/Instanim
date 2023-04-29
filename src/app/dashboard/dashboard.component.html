@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="posts-section">
-            <div class="post"   *ngFor="let ser of liste3">
+            <div class="post"   *ngFor="let ser of liste5">
                 <div class="post-header">
                     <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="post-Profil-pic" />
                     <div class="post-details">
@@ -40,7 +40,7 @@
                 <div class="post-content">
                     <h5>{{ser.text}}</h5>
                     <!-- <img alt="image" src="assets/images/bg/gallery/3col-big-img-01.png" class="post-image" /> -->
-                     <img [src]="ser.image"  class="post-image" alt="image">
+                     <img [src]="ser.image" *ngIf="ser.image" class="post-image" alt="image">
                 </div>
                 <div class="post-footer">
                 <div class="post-actions">

@@ -19,12 +19,12 @@ export class ChatComponent implements OnInit {
     const messages = document.getElementById("chat-messages") as HTMLElement;
     console.log(input.value);
 
-    const apiKey = "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" ;
+    const apiKey = "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" ;
     const message = input.value;
     input.value = "";
 
     messages.innerHTML += `<div class="message user-message">
-    <img src="../../assets/icons/user.png" alt="user icon"> <span>${message}</span>
+    <img src="../../assets/icons/user1.png" alt="user icon"> <span>${message}</span>
     </div>`;
     const response = await axios.post(
       "https://api.openai.com/v1/completions",
@@ -47,7 +47,7 @@ export class ChatComponent implements OnInit {
     const chatbotResponse = response.data.choices[0].text;
 
     messages.innerHTML += `<div class="message bot-message">
-    <img src="../../assets/icons/chatbot.png" alt="bot icon"> <span>${chatbotResponse}</span>
+    <img src="../../assets/icons/chat1.png" alt="bot icon"> <span>${chatbotResponse}</span>
     </div>`;
   
   } 
