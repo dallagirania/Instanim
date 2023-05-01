@@ -1,0 +1,86 @@
+<app-header1></app-header1>
+<div class="dashboard-container">
+    <app-dashboard-menu></app-dashboard-menu>
+    <div class="feed-content">
+        <div class="feed-content-left">
+            <div class="feed-content-todo-menu">
+                
+                <ul>
+                    <li class="todolists-title"> 
+                        <a routerLink="/todolists">
+                            <button>
+                                <h5>ToDoLists</h5>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="todo-btn">
+                        <ul>
+                            <li class="todo-important">
+                                <a routerLink="/todolists/:important">
+                                  <button class="todo-important-btn">Important ToDoLists</button>
+                                </a>
+                              </li>
+                              <li style="position: relative">
+                                <a href="/addtodo">
+                                 <button class="todo-add-btn"><i class="fa-solid fa-square-plus" style="color: #001D23;"></i> Add ToDo</button>
+                                </a>
+                              </li>
+                        </ul>
+                    </li>
+                    
+                    
+                  </ul>
+            </div>
+
+            <div class="blog-list">
+                    <h3>New ToDo</h3>
+                    <div class="todo-element">
+                        <div class="todo-element-entete">
+                            <img src="../../assets/images/todo_icon.png" class="icon-todolist">
+                            <div class="todo-element-entete-txt">
+                                <h6 class="todo-element-tit">Vaccin <span>(Animal 1)</span></h6>
+                                <p class="todo-element-date">29/05/2023</p> 
+                            </div>
+                        </div>
+                       
+                        <p class="todo-element-desc">Vaccination obligatoire et non retardive</p> 
+                        <div class="todo-element-icons">
+                            <div class="fav-done">
+                                Importnt?
+                                <button><i class="fa-solid fa-star" style="color: #f46f30;"></i></button>
+                                Done?
+                                <button><i class="fa-regular fa-circle-check" style="color: #f46f30;"></i></button>
+                            </div>
+                            
+                            <button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i></button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i>
+
+                        </div>  
+                    </div>
+
+                    
+
+                    <div class="todo-element done">
+                        <div class="todo-element-entete">
+                            <img src="../../assets/images/todo_icon.png" class="icon-todolist">
+                            <div class="todo-element-entete-txt">
+                                <h6 class="todo-element-tit">Visite de vétérinaire <span>(Animal 1)</span></h6>
+                                <p class="todo-element-date">29/05/2023</p> 
+                            </div>
+                        </div>
+                        <p class="todo-element-desc"></p> 
+                        <div class="todo-element-icons">
+                            <div class="fav-done">
+                                Important?
+                                <button><i class="fa-solid fa-star" style="color: #f46f30;"></i></button>
+                                Done?
+                                <button><i class="fa-solid fa-circle-check" style="color: #143b0c;"></i></button>
+                            </div>
+                            
+                            <button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i></button>
+                                
+
+                        </div>  
+                    </div>
+                
+            </div>
+    </div>

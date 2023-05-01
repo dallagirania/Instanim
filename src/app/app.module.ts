@@ -35,6 +35,11 @@ import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogdetComponent } from './blogdet/blogdet.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
+import { TodoListsComponent } from './todo-lists/todo-lists.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
+import { ImportantTodoComponent } from './important-todo/important-todo.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +69,10 @@ import { ChatComponent } from './chat/chat.component';
     BlogHomeComponent,
     BlogdetComponent,
     ProfileComponent,
-    ChatComponent, 
+    ChatComponent,
+    TodoListsComponent,
+    AddTodoComponent,
+    ImportantTodoComponent,
     
     // SwiperModule
     
@@ -77,6 +85,7 @@ import { ChatComponent } from './chat/chat.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    
     
    
   ],
