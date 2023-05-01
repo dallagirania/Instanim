@@ -22,15 +22,15 @@
                 <div class="comment-details">
                     <h6 class="comment-publisher">Rania Dallagi</h6>
                     <h6 class="comment-date">10th, April 2021</h6>
-                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="comment-text"> Good</p>
                 </div>
             </div>
             <div class="comment">
                 <img src="assets/images/resumes-list-avatar-02.png" alt="">
                 <div class="comment-details">
-                    <h6 class="comment-publisher">Rania Dallagi</h6>
+                    <h6 class="comment-publisher">Samar Raboudi</h6>
                     <h6 class="comment-date">10th, April 2021</h6>
-                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="comment-text">Excelent Blog</p>
                 </div>
             </div>
             <input class="comment-input" type="text" name="" id="" placeholder="Write your comment..">
@@ -40,43 +40,13 @@
         <div class="recent-blog-title">
             <h4>Recently Posted</h4>
         </div>
-        <div class="recent-blog-list">
+        <div class="recent-blog-list"  *ngFor="let vet of liste4 | paginate:{itemsPerPage:4,currentPage:page,totalItems:nbVet}">
             <div class="recent-blog-item">
-                <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
+                <a><h6  [routerLink]="['/blog',vet.id]">{{vet.titre}}</h6></a>
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
-                        <p>23</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-blog-item">
-                <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                <div class="recent-blog-details">
-                    <p class="recent-blog-date">Sep 12,2020</p>
-                    <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
-                        <p>23</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-blog-item">
-                <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                <div class="recent-blog-details">
-                    <p class="recent-blog-date">Sep 12,2020</p>
-                    <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
-                        <p>23</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-blog-item">
-                <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                <div class="recent-blog-details">
-                    <p class="recent-blog-date">Sep 12,2020</p>
-                    <div class="recent-blog-comments">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-regular fa-heart"></i>
                         <p>23</p>
                     </div>
                 </div>

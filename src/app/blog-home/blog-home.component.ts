@@ -14,6 +14,11 @@ export class BlogHomeComponent implements OnInit {
   liste : Blog[]=[]
   liste1 : Blog[]=[]
   liste2 : Blog[]=[]
+  liste3 : Blog[]=[]
+  liste4 : Blog[]=[]
+  liste5 : Blog[]=[]
+  liste6 : Blog[]=[]
+  liste7 : Blog[]=[]
   titre:any
   constructor(
     private service:CrudService,
@@ -24,6 +29,20 @@ export class BlogHomeComponent implements OnInit {
       this.liste=vet
       this.nbVet=vet.length
     })
+    this.service.getBlog().subscribe(vet=>{
+      this.liste3=vet 
+      this.liste4=this.liste3.reverse()
+      })
+      // this.service.getBlog().subscribe(serv=>{
+      //   this.liste5=serv
+      //   this.nbVet=serv.length
+      //   this.liste6=this.liste5.filter(serv=>serv.categorie=="Grooming")
+      //   this.liste7=this.liste5.filter(serv=>serv.categorie=="DayCar")
+        // this.liste4=this.liste.filter(serv=>serv.categorie=="DayCar")
+        // this.liste5=this.liste4
+        // this.liste6=this.liste.filter(serv=>serv.categorie=="Broading")
+        // this.liste7=this.liste6
+      // })
   }
 
   Search(){

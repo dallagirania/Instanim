@@ -15,6 +15,16 @@ export class BlogdetComponent implements OnInit {
   id: any;
   currentBlog=new Blog()
   user:any;
+  page:number=1
+  nbVet:number=0
+  liste : Blog[]=[]
+  liste1 : Blog[]=[]
+  liste2 : Blog[]=[]
+  liste3 : Blog[]=[]
+  liste4 : Blog[]=[]
+  liste5 : Blog[]=[]
+  liste6 : Blog[]=[]
+  liste7 : Blog[]=[]
    constructor(
       private service: CrudService,
      private router: Router,
@@ -32,7 +42,11 @@ export class BlogdetComponent implements OnInit {
     this.id=this.rout.snapshot.params["id"]
     this.getBlog(this.id);
     // console.log(this.currentOffre.entreprise)
-   }
+    this.service.getBlog().subscribe(vet=>{
+      this.liste3=vet 
+      this.liste4=this.liste3.reverse()
+      })
+}
    getBlog(id:number)
    {
      this.service.getBlogById(id).subscribe(data=>{

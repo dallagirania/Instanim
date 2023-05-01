@@ -344,57 +344,18 @@
                   <h3>Newest Posts</h3>
                 </div>
                 <div class="recent-post-wraper">
-                  <div class="widget-cnt mb-25">
+                  <div class="widget-cnt mb-25"  *ngFor="let vet of liste4 | paginate:{itemsPerPage:3,currentPage:page,totalItems:nbVet}">
                     <div class="wi">
-                      <a href="blog-details.html"
-                        ><img
-                          src="assets/images/bg/blog/blog-sidebar-1.png"
-                          alt="image"
-                      /></a>
+                      <a><img  [src]="vet.img"  alt="image" height="80px"/></a>
                     </div>
                     <div class="wc">
-                      <a href="blog-grid.html">July 18, 2022</a>
+                      <a >July 18, 2022</a>
                       <h6>
-                        <a href="blog-details.html"
-                          >Quisque laoreet Maecento facilisis tristique.</a
-                        >
+                        <a [routerLink]="['/blogDet',vet.id]">{{vet.titre}}</a>
                       </h6>
                     </div>
                   </div>
-                  <div class="widget-cnt mb-25">
-                    <div class="wi">
-                      <a href="blog-details.html"
-                        ><img
-                          src="assets/images/bg/blog/blog-sidebar-2.png"
-                          alt="image"
-                      /></a>
-                    </div>
-                    <div class="wc">
-                      <a href="blog-grid.html">July 15, 2022</a>
-                      <h6>
-                        <a href="blog-details.html"
-                          >Etiam vel diam volutpatha pellentesque.</a
-                        >
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="widget-cnt">
-                    <div class="wi">
-                      <a href="blog-details.html"
-                        ><img
-                          src="assets/images/bg/blog/blog-sidebar-3.png"
-                          alt="image"
-                      /></a>
-                    </div>
-                    <div class="wc">
-                      <a href="blog-grid.html">July 14, 2022</a>
-                      <h6>
-                        <a href="blog-details.html"
-                          >Nunc finibus gravidato on porta. Nulla vitae.</a
-                        >
-                      </h6>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
               

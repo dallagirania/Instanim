@@ -12,6 +12,8 @@ export class BlogListComponent implements OnInit {
   nbVet:number=0
   page:number=1
   liste : Blog[]=[]
+  liste3 : Blog[]=[]
+  liste4: Blog[]=[]
   constructor(
     private service:CrudService,
     private route:Router
@@ -21,6 +23,10 @@ export class BlogListComponent implements OnInit {
       this.liste=vet
       this.nbVet=vet.length
     })
+    this.service.getBlog().subscribe(vet=>{
+      this.liste3=vet 
+      this.liste4=this.liste3.reverse()
+      })
   }
 
 }

@@ -19,6 +19,7 @@ export class Header1Component implements OnInit {
       private router: Router,
     ) {
    
+      // this.user=this.service.userDetail()
      }
   
      ngOnInit(): void {

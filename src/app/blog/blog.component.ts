@@ -13,6 +13,11 @@ export class BlogComponent implements OnInit {
   id: any;
   currentBlog=new Blog()
   user:any;
+  liste : Blog[]=[]
+  liste3 : Blog[]=[]
+  liste4: Blog[]=[]
+  nbVet:number=0
+  page:number=1
    constructor(
       private service: CrudService,
      private router: Router,
@@ -30,6 +35,10 @@ export class BlogComponent implements OnInit {
     this.id=this.rout.snapshot.params["id"]
     this.getBlog(this.id);
     // console.log(this.currentOffre.entreprise)
+    this.service.getBlog().subscribe(vet=>{
+      this.liste3=vet 
+      this.liste4=this.liste3.reverse()
+      })
    }
    getBlog(id:number)
    {

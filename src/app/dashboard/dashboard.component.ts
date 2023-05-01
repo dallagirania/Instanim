@@ -13,7 +13,7 @@ import { Publication } from '../Model/Publication.model';
 })
 export class DashboardComponent implements OnInit {
   
-mydate=new Date()
+  mydate=new Date()
   user:any
   photoLink ="assets/images/h1-newsletter-bg.png";
   liste:Publication[]=[]
