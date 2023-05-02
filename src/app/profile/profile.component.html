@@ -136,49 +136,25 @@
             </div>
             <div class="feed-content-right">
                 <div class="recent-blog-title">
-                    <h4>Recently Posted</h4>
+                    <h4>My Pets</h4>
                 </div>
                 <div class="recent-blog-list">
-                    <div class="recent-blog-item">
-                        <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                        <div class="recent-blog-details">
-                            <p class="recent-blog-date">Sep 12,2020</p>
+                    <div class="recent-blog-item" *ngFor="let ser of liste " style="margin:10px" >
+                        <img src="assets/images/dash/dog1.jpg" class="petProfil" style="height: 60px;">
+                        <span>{{'  '}}{{ser.nom}}</span> 
+                        <span>{{'  '}}<button > <i class="fa-solid fa-pen-to-square"></i></button></span>
+                        <span>{{'  '}}<button class="btn-pet"> <i class="fa-sharp fa-solid fa-trash" style="color: red;"></i></button></span>
+                        <!-- <div class="recent-blog-details">
                             <div class="recent-blog-comments">
-                                <i class="fa-regular fa-heart"></i>
-                                <p>23</p>
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </div>
-                        </div>
-                    </div>
-                    <div class="recent-blog-item">
-                        <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                        <div class="recent-blog-details">
-                            <p class="recent-blog-date">Sep 12,2020</p>
                             <div class="recent-blog-comments">
-                                <i class="fa-regular fa-heart"></i>
-                                <p>23</p>
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </div>
-                        </div>
+                        </div> -->
+                        
                     </div>
-                    <div class="recent-blog-item">
-                        <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                        <div class="recent-blog-details">
-                            <p class="recent-blog-date">Sep 12,2020</p>
-                            <div class="recent-blog-comments">
-                                <i class="fa-regular fa-heart"></i>
-                                <p>23</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recent-blog-item">
-                        <a href="#"><h6>Awesome Web Dev Tools and Resources For 2021 in 30 Minutes</h6></a>
-                        <div class="recent-blog-details">
-                            <p class="recent-blog-date">Sep 12,2020</p>
-                            <div class="recent-blog-comments">
-                                <i class="fa-regular fa-heart"></i>
-                                <p>23</p>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>

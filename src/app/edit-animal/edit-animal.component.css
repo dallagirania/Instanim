@@ -1,4 +1,4 @@
-
+/* @import '~@fortawesome/fontawesome-free/css/all.css'; */
 .dashboard-container{
     display: flex;
     align-items: center;
@@ -75,8 +75,8 @@
     background: linear-gradient(90deg, #F86CA1 0%, #F46F30 100%);
     color: white;
     margin-right: 10px;
+   
 }
-
 .todo-important-btn:hover , .todo-add-btn:hover{
   
     background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
@@ -88,10 +88,14 @@
     position: relative;
     right: 100px;
 }
+.todolists-title button{
+    background: none;
+}
 
-.blog-list{
+.add-todo{
+    
     position: absolute;
-    top:50%;
+    top:40%;
     background-color: white;
     box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
     0 1px 1px rgba(112, 112, 112, 0.11), 
@@ -101,107 +105,87 @@
     border-radius: 5px;
     width:722px;
     margin: 0;
-    min-height: 500px;
+    padding-bottom: 20px;
+    min-height: 400px;
 }
-.blog-list .animals-todos{
-    margin:20px;
-    border: #000 solid;
-    color:#000;
-    display: block;
-    min-height: 50px;
-    justify-content: center;
-    padding-top:10px ;
-}
-.animal-description{
-    min-width: 600px;
-}
-.fa-solid-fa-angle-down{
-    display: flex;
-    position: absolute;
-    right: 50px;
-    color: #4d5253;
-    background: none;
+form{
+    
+        margin-top: 10px;
+        display: flex;
+        position: relative;
+        background-color: #f3f5f6;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+        0 1px 1px rgba(112, 112, 112, 0.11), 
+        0 2px 2px rgba(112, 112, 112, 0.11), 
+        0 3px 4px rgba(112, 112, 112, 0.11), 
+        0 4px 8px rgba(0,0,0,0.11);
+        border-radius: 5px;
+        max-width: 600px;
+        margin-left: 50px;
+        padding: 20px;
+       
     
 }
-.blog-list .down{
-    min-height: 300px;
-}
-.blog-list .animals-todos .animal-tit{
-    position: relative;
-    right: -5px;
-}
-.nb-todo{
-    font-size: 11px;
-}
-.blog-list .animals-todos .entete-todo{
-    display: flex;
-    position: relative;
-    
-}
-.blog-list .animals-todos .todo-element{
-    display: block;
-    position: relative;
-    background-color: #f3f5f6;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-    0 1px 1px rgba(112, 112, 112, 0.11), 
-    0 2px 2px rgba(112, 112, 112, 0.11), 
-    0 3px 4px rgba(112, 112, 112, 0.11), 
-    0 4px 8px rgba(0,0,0,0.11);
-    border-radius: 5px;
-    max-width: 600px;
+.add-todo h3{
     margin-left: 50px;
-    padding: 20px;
 }
-.fav-done{
-    display: flex;
+.add-todo-btn{
+    
+    margin-left: 60px;
+    margin-top: 120px;
 }
-.img-animal-todolist{
-    border-radius: 50%;
-    width:40px;
-    height: 40px;
-    position: relative;
-    top: -5px;
-    margin-left: 5px;
-}
-.todo-element-entete{
-    display: flex;
-}
-.icon-todolist{
-    width:50px;
-    height: 50px;
+.btn-seve-todo, .btn-cancel-todo{
+    
+    margin-bottom: 20px;
+    width: 150px;
+    height:50px;
+    border-radius: 6%;
+    /* border: #001D23 solid; */
 }
 
-.blog-list .animals-todos .done{
-    background: #4d5253;
-}
-.fa-star ,.fa-circle-check{
-    margin-right: 30px;
+.btn-seve-todo{
+    background: linear-gradient(90deg, #F86CA1 0%, #F46F30 100%);
+    display: block;
     
-    
-}
-.todo-element-icons button{
-    display: flex;
-    background: none;
    
+}
+.btn-cancel-todo{
+    background: linear-gradient(90deg, #F86CA1 0%, #F46F30 100%);
+    display: block;
+    /* background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+     /* -webkit-text-fill-color: transparent;  */
+    /* border: 1px solid #f46f30;
+    color: #a1a1a1;
+    display: block; */ 
+    
+}
 
+.btn-cancel-todo:hover , .btn-seve-todo:hover{
+  
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+     /* -webkit-text-fill-color: transparent;  */
+    border: 1px solid #f46f30;
 }
-.todo-element-icons{
-    display: flex;
-}
-.fa-pen-to-square{
-    position: absolute;
-    right: 50px;
-}
-.todolists-title button{
-    background: none;
-}
-.todo-element{
+
+
+.form-title, .form-date, .form-desc, .form-anim{
     margin-bottom: 10px;
-}
+    margin-top: 10px;
 
+}
+.form-anim label{
+    margin-right: 10px;
+}
+input{
+    width: 300px;
+    border: #4d5253 solid;
+    border-radius: 8%;
+}
 
 /*************** Right ***************************/
-  .feed-content-right{
+.feed-content-right{
     width: 40%;
     margin-left: 100px;
 }
@@ -247,3 +231,20 @@
     margin-right: 10px;
     width: 50px;
 }
+
+
+.main-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+
+  /* .formulaire{
+    padding:20px;
+    margin-bottom: 10px;
+  } */

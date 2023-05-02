@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   total:number=0
   nbrpub:number=0
   // photoLink ="assets/images/h1-newsletter-bg.png";
-  liste:Publication[]=[]
+  liste:Proprietaire[]=[]
   liste1:Proprietaire[]=[]
   liste3:Publication[]=[]
   liste4:Publication[]=[]
@@ -196,11 +196,12 @@ export class ProfileComponent implements OnInit {
       this.liste5=this.liste4.filter(ser=>ser.etat==true)
      
     })
-    // this.service.getPublication().subscribe(ser=>{
-    //   this.liste3=ser 
-    //   this.liste4=this.liste3.reverse()
-    //   this.liste5=this.liste4.filter(ser=>ser.etat==true)
-    //   })
+    this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
+      this.liste=proprietaire.animal
+      this.nbranim=proprietaire.animal.length
+      console.log(this.nbranim)
+     
+    })
   }
   getAdmin(id:number)
   {

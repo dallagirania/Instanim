@@ -38,6 +38,7 @@ import { ChatComponent } from './chat/chat.component';
 import { TodoListsComponent } from './todo-lists/todo-lists.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { ImportantTodoComponent } from './important-todo/important-todo.component';
+import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 
 
 
@@ -73,6 +74,7 @@ import { ImportantTodoComponent } from './important-todo/important-todo.componen
     TodoListsComponent,
     AddTodoComponent,
     ImportantTodoComponent,
+    EditAnimalComponent,
     
     // SwiperModule
     
