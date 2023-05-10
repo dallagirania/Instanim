@@ -142,3 +142,32 @@
 .recent-blog-comments i{
     margin-right: 7px;
 }
+
+#post-btn{
+    padding: 10px;
+    border-radius: 10px;
+    color: #868686;
+    border: 1px solid transparent;
+}
+#post-btn i{
+    margin-right: 5px;
+}
+#post-btn:hover{
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid #f46f30;
+}
+
+.write-new-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.write-new-post input{
+    width: 80%;
+    padding: 15px 10px;
+    background-color: #f3f4f6;
+    border-radius: 20px;
+}

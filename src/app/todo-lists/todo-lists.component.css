@@ -1,8 +1,6 @@
 
 .dashboard-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
     width: 100%;
     position: relative;
     font-family: var(--font-cabin);
@@ -14,236 +12,154 @@
     top: 0px;
     right: 0;
     padding: 1.2rem 7rem;
+}
+.feed-content-header{
+    width: 100%;
+    padding: 1rem 0; 
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
-    
-
-   /*  align-items: baseline; */
+    align-items: center;
 }
-.feed-content-left{
-    
-    display: block;
-    padding: 1rem;
-    width: 75%;
-}
-.feed-content-todo-menu{
-    
-    display: inline-block;
-    width: 722px;
-    padding: 15px 0; 
-    font-weight: 600;
-    height: 100px;
-    margin: 0;
-    
-    
-}
-.feed-content-todo-menu ul{
-       
-    background-color: #001D23;
-    display: flex;                 
-    padding: 15px; 
-    justify-content: center; 
-     
-}
-.feed-content-todo-menu ul li{
-    list-style-type: none ;  
-    justify-content: center; 
-}
-.feed-content-todo-menu ul li a{
-    display:block;                
-    min-width: 80px;            
-    text-decoration: none;
-    font-size: small;
-    justify-content: center;
-    color: #4d5253;
-    
-}
-.feed-content-todo-menu h5{
-    color: #fff;
+.feed-content-header h5{
+    color: var(--title-color1);
     font-weight: bold;
     font-size: 1.5rem;
 }
-.todo-btn{
-    
-    position: relative;
-    right:-100px;
-    top: -10px;
-}
-.todo-important-btn , .todo-add-btn{
-    min-width: 150px;
-    min-height:30px;
-    background: linear-gradient(90deg, #F86CA1 0%, #F46F30 100%);
-    color: white;
-    margin-right: 10px;
-}
-
-.todo-important-btn:hover , .todo-add-btn:hover{
-  
+.todo-btn {
+    padding:5px 0px;
+    width: 200px;
+    border-radius: 5px;
     background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
     -webkit-background-clip: text;
-     /* -webkit-text-fill-color: transparent;  */
+    -webkit-text-fill-color: transparent;
     border: 1px solid #f46f30;
+    text-align: center;
 }
-.todolists-title{
-    position: relative;
-    right: 100px;
+.todo-btn:hover{
+    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
+    -webkit-text-fill-color: white;
+    border: 1px solid transparent;
 }
-
+.todo-important-btn{
+    margin-right: 20px;
+}
 .blog-list{
-    position: absolute;
-    top:50%;
-    background-color: white;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-    0 1px 1px rgba(112, 112, 112, 0.11), 
-    0 2px 2px rgba(112, 112, 112, 0.11), 
-    0 3px 4px rgba(112, 112, 112, 0.11), 
-    0 4px 8px rgba(0,0,0,0.11);
-    border-radius: 5px;
-    width:722px;
-    margin: 0;
-    min-height: 500px;
-}
-.blog-list .animals-todos{
-    margin:20px;
-    border: #000 solid;
-    color:#000;
-    display: block;
-    min-height: 50px;
-    justify-content: center;
-    padding-top:10px ;
-}
-.animal-description{
-    min-width: 600px;
-}
-.fa-solid-fa-angle-down{
+    width: 100%;
+       background-color: white;
+       box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+       0 1px 1px rgba(112, 112, 112, 0.11), 
+       0 2px 2px rgba(112, 112, 112, 0.11), 
+       0 3px 4px rgba(112, 112, 112, 0.11), 
+       0 4px 8px rgba(0,0,0,0.11);
+       border-radius: 5px;
+       padding: 1rem 0;
+       min-height: 500px;
+       margin: 1rem 0;
+   }
+   .blog-list .animals-todos{
+       margin:20px;
+       border: 1px solid #979696;
+       color: var(--title-color1);
+       border-radius: 5px;
+   }
+   .entete-todo{
     display: flex;
-    position: absolute;
-    right: 50px;
-    color: #4d5253;
-    background: none;
-    
-}
-.blog-list .down{
-    min-height: 300px;
-}
-.blog-list .animals-todos .animal-tit{
-    position: relative;
-    right: -5px;
-}
-.nb-todo{
-    font-size: 11px;
-}
-.blog-list .animals-todos .entete-todo{
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+   }
+   .animal-name{
     display: flex;
-    position: relative;
-    
-}
-.blog-list .animals-todos .todo-element{
-    display: block;
-    position: relative;
-    background-color: #f3f5f6;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-    0 1px 1px rgba(112, 112, 112, 0.11), 
-    0 2px 2px rgba(112, 112, 112, 0.11), 
-    0 3px 4px rgba(112, 112, 112, 0.11), 
-    0 4px 8px rgba(0,0,0,0.11);
-    border-radius: 5px;
-    max-width: 600px;
-    margin-left: 50px;
-    padding: 20px;
-}
-.fav-done{
-    display: flex;
-}
-.img-animal-todolist{
-    border-radius: 50%;
-    width:40px;
-    height: 40px;
-    position: relative;
-    top: -5px;
-    margin-left: 5px;
-}
-.todo-element-entete{
-    display: flex;
-}
-.icon-todolist{
-    width:50px;
-    height: 50px;
-}
-
-.blog-list .animals-todos .done{
-    background: #4d5253;
-}
-.fa-star ,.fa-circle-check{
-    margin-right: 30px;
-    
-    
-}
-.todo-element-icons button{
-    display: flex;
-    background: none;
-   
-
-}
-.todo-element-icons{
-    display: flex;
-}
-.fa-pen-to-square{
-    position: absolute;
-    right: 50px;
-}
-.todolists-title button{
-    background: none;
-}
-.todo-element{
-    margin-bottom: 10px;
-}
-
-
-/*************** Right ***************************/
-  .feed-content-right{
-    width: 40%;
-    margin-left: 100px;
-}
-.birthdays-div{
-    text-align: justify;
-    padding: 10px;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-    0 1px 1px rgba(112, 112, 112, 0.11), 
-    0 2px 2px rgba(112, 112, 112, 0.11), 
-    0 3px 4px rgba(112, 112, 112, 0.11), 
-    0 4px 8px rgba(0,0,0,0.11);
-    border-radius: 5px;
-    margin-bottom: 30px;
-}
-.birthdays-div h5{
-    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 1.4rem;
-}
-.celebrate-div{
-    display: flex;
-    justify-content:baseline;
-    align-items: baseline; 
-    margin-top: 10px;
-    padding: 0 10px;
-   
-}
-.celebrate-div i{
-    background: linear-gradient(90deg, #F86CA7 0%, #FF7F18 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
-.celebrate-div p{
-    color: var(--title-color1);
-}
-.gift-img{
-    margin-right: 10px;
+    align-items: center;
+    justify-content: space-between;
+   }
+   .img-animal-todolist{
     width: 50px;
-}
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+   }
+   .animal-tit{
+    font-weight: 700;
+   }
+   .animal-description{
+       min-width: 600px;
+   }
+   .btn-down{
+       display: flex;
+       justify-content: center;
+       align-items: baseline;
+       background: none;  
+   }
+   .btn-down p{
+    color: var(--title-color1);
+   }
+   .btn-down i{
+    margin-left: 5px;
+   }
+   .todo-element{
+    margin: 1rem;
+    background-color: #dad8d8;
+    padding:0.5rem  1rem;
+    border-radius: 5px;
+   }
+   .todo-element-entete{
+    display: flex;
+    justify-content: baseline;
+    align-items: start;
+   }
+   .todo-element-entete-txt{
+    margin-left: 10px;
+   }
+   .todo-element-entete-txt h6{
+    font-size: 13px;
+   }
+   .todo-element-desc{
+    color: var(--title-color1);
+   }
+   .fav-done{
+       display: flex;
+       align-items: center;
+   }
+
+
+   .icon-todolist{
+       width:50px;
+       height: 50px;
+   }
+   
+   .blog-list .animals-todos .done{
+       background: #4d5253;
+   }
+   .fa-star ,.fa-circle-check{
+       margin-right: 30px;
+       
+       
+   }
+   .todo-element-icons button{
+       display: flex;
+       background: none;
+       align-items: center;
+      
+   
+   }
+   .todo-element-icons{
+       display: flex;
+       align-items: center;
+   }
+   .fa-pen-to-square{
+       position: absolute;
+       right: 50px;
+   }
+   .todolists-title button{
+       background: none;
+   }
+  
+   .tache{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+   
+   

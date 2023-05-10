@@ -16,24 +16,24 @@
             </div>
         </div>
         <div class="comment-section">
-            <h5 class="title">Comments (2)</h5>
-            <div class="comment">
-                <img src="assets/images/resumes-list-avatar-02.png" alt="">
+            <h5 class="title">Comments {{nbranim}}</h5>
+            <div class="comment"  *ngFor="let com of liste8 ">
+                <img [src]="com.image" alt="" *ngIf="com.image;else admin">
+                <ng-template #admin>
+                    <img src="assets/images/bg/blog/user_anonym.png" alt="" style="display: none" onload="this.style.display=''" class="background-pic"  >
+               </ng-template>
                 <div class="comment-details">
-                    <h6 class="comment-publisher">Rania Dallagi</h6>
-                    <h6 class="comment-date">10th, April 2021</h6>
-                    <p class="comment-text"> Good</p>
+                    <h6 class="comment-publisher">{{com.nom}}{{' '}}{{com.prenom}}</h6>
+                    <h6 class="comment-date">{{com.date}}</h6>
+                    <p class="comment-text"> {{com.msg}}</p>
                 </div>
             </div>
-            <div class="comment">
-                <img src="assets/images/resumes-list-avatar-02.png" alt="">
-                <div class="comment-details">
-                    <h6 class="comment-publisher">Samar Raboudi</h6>
-                    <h6 class="comment-date">10th, April 2021</h6>
-                    <p class="comment-text">Excelent Blog</p>
-                </div>
-            </div>
-            <input class="comment-input" type="text" name="" id="" placeholder="Write your comment..">
+           <form [formGroup]="ajoutForm" (ngsubmit)="ajouterContact()">
+           <div class="write-new-post"> 
+            <input class="comment-input" type="text" name="" id="" placeholder="Write your comment.." formControlName="msg">
+            <button  type="submit"  id="post-btn"(click)="ajouterContact()"><i class="fa-solid fa-share" ></i>Post</button>
+        </div>
+         </form> 
         </div>
     </div>
     <div class="feed-content-right">

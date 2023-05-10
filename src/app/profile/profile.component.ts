@@ -5,6 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 import { Publication } from '../Model/Publication.model';
+import { Animal } from '../Model/Animal.model';
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,7 +19,7 @@ export class ProfileComponent implements OnInit {
   total:number=0
   nbrpub:number=0
   // photoLink ="assets/images/h1-newsletter-bg.png";
-  liste:Proprietaire[]=[]
+  liste:Animal[]=[]
   liste1:Proprietaire[]=[]
   liste3:Publication[]=[]
   liste4:Publication[]=[]
@@ -40,7 +43,8 @@ export class ProfileComponent implements OnInit {
      private router: Router,
      private fb: FormBuilder,
      private toast:NgToastService,
-     private rout:ActivatedRoute) { 
+     private rout:ActivatedRoute,
+    ) { 
       
       this.user=this.service.userDetail()
 
@@ -90,7 +94,7 @@ export class ProfileComponent implements OnInit {
       let data = this.ajoutForm.value;
       console.log(data);
       let pub = new Publication(
-         undefined,this.mydate.toISOString().slice(0,10), data.etat,this.imgURL,data.text,JSON.parse(JSON.stringify(this.currentProp)));
+         undefined,data.aime,this.mydate.toISOString().slice(0,10), data.etat,this.imgURL,data.text,JSON.parse(JSON.stringify(this.currentProp)));
          console.log(pub); 
          this.currentProp.publication.push(pub);
          console.log(55)
@@ -135,6 +139,7 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(e.target.files[0]);
       reader.onload=(event:any)=>{
         this.photoLink=event.target.result;
+        this.currentProp.img=this.photoLink
       }
     }
   }
@@ -154,6 +159,7 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(e.target.files[0]);
       reader.onload=(event:any)=>{
         this.profil_img =event.target.result;
+        this.currentProp.photo=this.profil_img
       }
     }
   }
@@ -171,16 +177,12 @@ export class ProfileComponent implements OnInit {
   }
   modifierProp(){
     this.id=this.rout.snapshot.params["id"];
-    console.log(this.id);
-    this.service.updateProp(this.id,this.currentAdmin).subscribe(admin=>{
-      this.service.loginproprietaire(this.currentAdmin).subscribe(res=>{
-        let token=res.token;
-        localStorage.setItem("mytoken",token)
-      })
-      this.router.navigate(["/profile"]).then(()=>{
+     console.log(this.id);
+     this.service.updateProp(this.id,this.currentProp).subscribe(entreprise=>{
+      this.router.navigate(["/profile", this.currentProp.id]).then(()=>{
         window.location.reload();
-      })
-    })
+      }) 
+     })
    }
    ngOnInit(): void {
     // this.user=localStorage.getItem("user")
@@ -203,13 +205,7 @@ export class ProfileComponent implements OnInit {
      
     })
   }
-  getAdmin(id:number)
-  {
-    this.service.getPropById(id).subscribe(data=>{
-      this.currentAdmin=data
-
-    })
-  }
+  
 
 }
 

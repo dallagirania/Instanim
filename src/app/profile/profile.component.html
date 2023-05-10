@@ -3,12 +3,8 @@
     <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="banner">
+            <form>
             <div class="background">
-                <!-- <input type="file" accept="image/*" (change)="onSelectFile($event) " class=" form-control">
-                <img [src]="imgURL" height="100px" *ngIf="imgURL;else admin">
-                <ng-template #admin>
-                     <img [src]="currentBlog.img"  height="100px" >
-                </ng-template> -->
                 <img [src]="photoLink" style="display: none" onload="this.style.display=''" class="background-pic"  *ngIf="photoLink;else admin" />
                 <ng-template #admin>
                     <img [src]="currentProp.img"style="display: none" onload="this.style.display=''" class="background-pic"  >
@@ -17,13 +13,17 @@
                     <!-- <img [src]="profil_img" style="display: none" onload="this.style.display=''" class="profil-pic" /> -->
                     <img [src]="profil_img" style="display: none" onload="this.style.display=''" class="profil-pic"  *ngIf="profil_img;else admin1" />
                     <ng-template #admin1>
-                        <img [src]="currentProp.photo"style="display: none" onload="this.style.display=''"class="profil-pic"  >
+                        <img [src]="currentProp.photo"style="display: none" onload="this.style.display=''"class="profil-pic"  *ngIf="currentProp.photo;else admin1">
+                        <ng-template #admin1>
+                            <img src="assets/images/bg/blog/user_anonym.png"  class="profil-pic"  >
+                       </ng-template> 
                    </ng-template>
                     <button (click)="fileProfil.click()" id="profil-btn"><i class="fa-solid fa-image"></i></button>
                     <input id="default-btn" type="file" hidden accept="image/*" #fileProfil (change)="onProfilChanged($event)">
                 </div>
                 <input id="default-btn" type="file" hidden accept="image/*" #file (change)="onFileChanged($event)">
-                <button  id="custom-btn" (click)="file.click()"><i class="fa-regular fa-pen-to-square"></i>Edit</button>
+                <button  class="edit"  id="custom-btn" (click)="file.click()"><i class="fa-regular fa-pen-to-square"></i>Edit</button>
+                <button  class="save" (click)=" modifierProp()" ><i class="fa-solid fa-floppy-disk"></i>Save</button>
             </div>
 
 
@@ -31,10 +31,11 @@
             <div class="details">
                 <h2 >{{currentProp.prenom}}{{'  '}}{{currentProp.nom}}{{ "     "}}</h2>
                 <h6>{{currentProp.email}}</h6>
-                <!-- <input type="text"  class="form-control" name="prenom"[(ngModel)]="currentProp.prenom" readonly />
-                <input type="text"  class="form-control" name="email"[(ngModel)]="currentProp.email" readonly />  -->
-                <!-- <button  (click)="modifierProp()"><i class="fa-regular fa-pen-to-square"></i>Edit</button> -->
+                <!-- <input   type="text" name="nom" [(ngModel)]="currentProp.nom"/>
+                <input   type="text"  name="prenom" [(ngModel)]="currentProp.prenom"/>
+                <input   type="text"  name="email" [(ngModel)]="currentProp.email"/> -->
             </div>
+        </form>
         </div>
 
 
@@ -49,7 +50,7 @@
             <div class="feed-content-left">
                 <form class="new-post"  [formGroup]="ajoutForm" (ngsubmit)="ajouterPublication()">
                     <div class="write-new-post">
-                        <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="post-profil-pic" />
+                        <img alt="image" [src]="currentProp.photo" class="post-profil-pic"  *ngIf="currentProp.photo">
                         <input type="text" name="" id="" placeholder="What's in your mind?" formControlName="text">
                         <button  type="submit"  id="post-btn"  (click)="ajouterPublication()" ><i class="fa-solid fa-share" ></i>Post</button>
                     </div>
@@ -57,10 +58,10 @@
                         <img [src]="imgURL" style="display: none" onload="this.style.display=''"/>
                     </div>
                     <div class="new-post-option">
-                        <div  (click)="file.click()" class="new-post-option-item">
+                        <div  (click)="file1.click()" class="new-post-option-item">
                             <i  class="fa-solid fa-image"></i>
                             <h6>Photo/Video</h6>
-                            <input id="default-btn" type="file" hidden accept="image/*" #file (change)="onSelectFile($event)" formControlName="image">
+                            <input id="default-btn" type="file" hidden accept="image/*" #file1 (change)="onSelectFile($event)" formControlName="image">
                         </div>
                         <div class="new-post-option-item">
                             <i  class="fa-solid fa-user-tag"></i>
@@ -75,7 +76,7 @@
                 <div class="posts-section">
                     <div class="post" *ngFor="let ser of liste5">
                         <div class="post-header">
-                            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="post-Profil-pic" />
+                            <img alt="image" [src]="currentProp.photo" class="post-Profil-pic" />
                             <div class="post-details">
                                 <h4>{{currentProp.nom}}{{"  "}}{{currentProp.prenom}}</h4>
                                 <h5>{{ser.datepub}}</h5>
@@ -98,7 +99,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="comment-item">
+                        <!-- <div class="comment-item">
                             <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="comment-profil-pic" />
                             <div class="comment-second-div">
                                 <p>In ut odio libero vulputate</p>
@@ -110,11 +111,11 @@
                                     <h6 class="reply-comment">Reply</h6>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="comment-item">
-                            <img alt="image" src="assets/images/resumes-list-avatar-02.png" class="comment-profil-pic" />
+                            <img alt="image" src="assets/images/bg/team/h2-team-5.png" class="comment-profil-pic" />
                             <div class="comment-second-div">
-                                <p>sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. David !</p>
+                                <p>Pretty Dog </p>
                                 <div class="comment-item-action">
                                     <div class="love-comment">
                                         <i class="fa-regular fa-heart"></i>
@@ -134,7 +135,7 @@
               
                 </div>
             </div>
-            <div class="feed-content-right">
+            <!-- <div class="feed-content-right">
                 <div class="recent-blog-title">
                     <h4>My Pets</h4>
                 </div>
@@ -144,19 +145,37 @@
                         <span>{{'  '}}{{ser.nom}}</span> 
                         <span>{{'  '}}<button > <i class="fa-solid fa-pen-to-square"></i></button></span>
                         <span>{{'  '}}<button class="btn-pet"> <i class="fa-sharp fa-solid fa-trash" style="color: red;"></i></button></span>
-                        <!-- <div class="recent-blog-details">
-                            <div class="recent-blog-comments">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </div>
-                            <div class="recent-blog-comments">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </div>
-                        </div> -->
                         
                     </div>
                    
                 </div>
-            </div>
+            </div> -->
+            <div class="feed-content-right">
+                <div class="pet-div">
+                    <div class="recent-blog-title">
+                        <h4>My Pets</h4>
+                    </div>
+                    <div class="recent-blog-list">
+                        <div class="recent-blog-item" *ngFor="let ser of liste " style="margin:10px" >
+                            <div class="one-pet">
+                                <!-- <img [src]="ser.image" class="petProfil" > -->
+                                <img  [src]="ser.image" alt="" style="width:50px;height: 50px;" *ngIf="ser.image;else admin">
+                                      <ng-template #admin>
+                                          <img src="assets/images/dog.png" alt="" style="width:50px;height: 50px;" />
+                                     </ng-template>
+                                <div>
+                                    <h5 style="color:var(--title-color1)">{{ser.nom}}</h5>
+                                    <div class="pet-btns">
+                                    <button [routerLink]="['/editanim',ser.id]" > <i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-pet"> <i class="fa-sharp fa-solid fa-trash"></i></button>
+                                </div></div>
+                            </div>
+                            </div>
+
+                            
+                        </div>
+                       
+                    </div>
         </div>
     </div>
 </div>

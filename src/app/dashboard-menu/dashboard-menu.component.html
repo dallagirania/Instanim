@@ -13,7 +13,10 @@
       <i class="fa-solid fa-blog"></i>
       <a>Blog</a>
     </a>
-    
+    <a routerLink="/todolists" class="menu-item">
+      <i class="fa-solid fa-list-check"></i>
+      <a>To Do List</a>
+    </a>
     <a routerLink="/dash-vet" class="menu-item">
       <i class="fa-solid fa-user-doctor"></i>
       <a>Veterinarians</a>
@@ -41,8 +44,15 @@
         class="petProfil"
       />
       <a>Boarding</a> -->
-      <a href="/editanim"  style="color: black;">
-        <img src="assets/images/dash/dog1.jpg" class="petProfil" >{{ser.nom}}
+      <a  [routerLink]="['/editanim',ser.id]"  style="color: black;">
+        <img  [src]="ser.image" alt="" style="width:50px;height: 50px;" *ngIf="ser.image;else admin">{{ser.nom}}
+           <ng-template #admin>
+                <img src="assets/images/dog.png" alt="" style="width:50px;height: 50px;" />
+           </ng-template>
+        <!-- <img [src]="ser.image"  class="petProfil"  > {{ser.nom}} -->
+        <!-- <ng-template #show> *ngIf="ser.image;else show "
+          <img src="assets/images/dog.png"  class="petProfil" *ngIf="ser.image;else show " >{{ser.nom}}
+        </ng-template> -->
       </a>
     </div>
   

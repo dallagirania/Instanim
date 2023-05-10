@@ -1,3 +1,5 @@
+import { CommentBlog } from "./CommentBlog.model";
+
 export class Blog{
     constructor(
         public id?:number,
@@ -6,7 +8,7 @@ export class Blog{
         public text?:String ,
         public titre?:String ,
         public categorie?:String,
-     
+        public comment:CommentBlog[]=[],
         ){
 
     }

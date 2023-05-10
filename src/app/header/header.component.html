@@ -173,7 +173,7 @@
     <div  class="main-menu" *ngIf="user =='proprietaire'">
         <ul class="menu-list">
         <li class="menu-item-has-children">
-            <a>{{currentuser.nom }}{{'    '}}{{currentuser.prenom}}</a><i class="bi bi-plus dropdown-icon"></i>
+            <a>{{currentuser?.nom}}{{'    '}}{{currentuser?.prenom}}</a><i class="bi bi-plus dropdown-icon"></i>
             <ul class="sub-menu">
               <li><a (click)="Continue()">Dashboard </a></li>
               <li><a (click)="logOut()">LogOut</a></li>

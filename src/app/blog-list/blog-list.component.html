@@ -12,18 +12,14 @@
                     <a>Pet Boarding</a> 
                 </div>
             </div>
-        <div class="blog-list">
-            <a class="blog-item"  *ngFor="let vet of liste4 | paginate:{itemsPerPage:2,currentPage:page,totalItems:nbVet} ">
+            <div class="blog-list">
+             <a class="blog-item"  *ngFor="let vet of liste4 | paginate:{itemsPerPage:2,currentPage:page,totalItems:nbblog} ">
                 <!-- <img src="assets/images/resumes-list-avatar-02.png" alt="" class="blog-img"> -->
                 <img  [src]="vet.img"  class="blog-img" alt="" />
                 <div class="blog-details">
                     <h5 class="blog-title"  [routerLink]="['/blog',vet.id]">{{vet.titre}}</h5>
                     <p>{{vet.description}}</p>
                     <div class="blog-engagement">
-                        <div class="blog-engagement-item">
-                            <i class="fa-regular fa-heart"></i>
-                            <h6>12</h6>
-                        </div>
                         <div class="blog-engagement-item">
                             <i class="fa-regular fa-comment"></i>
                             <h6>5</h6>
@@ -39,13 +35,13 @@
         <div class="recent-blog-title">
             <h4>Recently Posted</h4>
         </div>
-        <div class="recent-blog-list"  *ngFor="let vet of liste4 | paginate:{itemsPerPage:4,currentPage:page,totalItems:nbVet}">
+        <div class="recent-blog-list"  *ngFor="let vet of liste">
             <div class="recent-blog-item">
                 <a><h6  [routerLink]="['/blog',vet.id]">{{vet.titre}}</h6></a>
                 <div class="recent-blog-details">
                     <p class="recent-blog-date">Sep 12,2020</p>
                     <div class="recent-blog-comments">
-                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-comment"></i>
                         <p>23</p>
                     </div>
                 </div>

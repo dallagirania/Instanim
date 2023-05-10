@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
       if(this.nbranim==0)
         {this.toast.info({
           detail:'error msg !!',
-          summary:'Vous Devez Ajouter Votre Compagnant'
+          summary:'You Must Add Your Pet'
         });}
         else{
           this.router.navigate(["/dashboard"]).then(()=>{

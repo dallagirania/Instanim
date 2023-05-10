@@ -26,6 +26,7 @@
     "axios": "^1.4.0",
     "ng-angular-popup": "^0.1.2",
     "ng-swagger-gen": "^2.3.1",
+    "ng2-search-filter": "^0.5.1",
     "ngx-pagination": "^6.0.2",
     "ngx-toastr": "^15.0.0",
     "openai": "^3.2.1",

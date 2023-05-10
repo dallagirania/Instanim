@@ -1,0 +1,47 @@
+<app-header1></app-header1>
+<div class="dashboard-container">
+  <app-dashboard-menu></app-dashboard-menu>
+  <div class="feed-content">
+    <div class="feed-content-header">
+      <h5>New To Do</h5>
+    </div>
+
+    <form  [formGroup]="ajoutForm" (ngsubmit)="ajouterTache()">
+      <div class="formulaire">
+        <div class="form-title">
+          <label for="titre">Title</label><br />
+          <input type="text"  class="input" formControlName="titre" />
+        </div>
+        <div class="form-date">
+          <label for="date">Date</label><br />
+          <input type="date" class="input" formControlName="date" />
+        </div>
+        <div class="form-desc">
+          <label for="desc">Description</label><br />
+          <input type="text"  class="input" formControlName="description" />
+        </div>
+
+        <div class="form-anim">
+          <label for="Anim">Animal: </label><br />
+          <!--lezim ya5idh liste ta3 7ayawenet mta3 il user-->
+          <select name="Anim" id="animal-all" formControlName="anim">
+            <option [value]="ser.nom" *ngFor="let ser of liste">
+              {{ ser.nom }}
+            </option>
+              <!-- <option value="animal1">Bichou</option>
+              <option value="animal2">Animal 2</option>
+              <option value="animal3">Animal 3</option> -->
+          </select>
+        </div>
+      </div>
+      <div class="add-todo-btn">
+        <button class="btn-seve-todo btn" (click)="ajouterTache()" >
+          <i class="fa-solid fa-floppy-disk" style="color: #001d23"></i>Add
+        </button>
+        <button class="btn-cancel-todo btn" routerLink="/todolists">
+          <i class="fa-solid fa-xmark" style="color: #001d23"></i> cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

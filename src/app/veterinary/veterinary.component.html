@@ -53,9 +53,9 @@
           </div>
           <div class="member-content">
             <h3>{{ vet.nom }}{{ " " }}{{ vet.prenom }}</h3>
-            <span>{{ vet.email }}</span ><br />
-            <span>{{ vet.tel }}</span><br />
-            <span>{{ vet.adresse }}</span>
+            <a href="mailto:{{vet.email}}">{{ vet.email }}</a ><br />
+            <a href="tel:{{vet.tel}}">{{ vet.tel }}</a><br />
+            <a style="color:rgb(112, 112, 249)">{{ vet.adresse }}</a>
           </div>
         </div>
       </div>

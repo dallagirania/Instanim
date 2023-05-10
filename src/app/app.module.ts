@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
@@ -36,10 +36,11 @@ import { BlogdetComponent } from './blogdet/blogdet.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
 import { TodoListsComponent } from './todo-lists/todo-lists.component';
-import { AddTodoComponent } from './add-todo/add-todo.component';
+
 import { ImportantTodoComponent } from './important-todo/important-todo.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
-
+import { AddtodoComponent } from './addtodo/addtodo.component';
+import { AnimalComponent } from './animal/animal.component';
 
 
 @NgModule({
@@ -72,12 +73,10 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
     ProfileComponent,
     ChatComponent,
     TodoListsComponent,
-    AddTodoComponent,
     ImportantTodoComponent,
     EditAnimalComponent,
-    
-    // SwiperModule
-    
+    AddtodoComponent,
+    AnimalComponent,
   ],
   imports: [
     NgToastModule,
@@ -87,8 +86,7 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    
-    
+    Ng2SearchPipeModule,
    
   ],
   providers: [],

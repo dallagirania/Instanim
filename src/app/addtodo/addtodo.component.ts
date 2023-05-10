@@ -5,27 +5,22 @@ import { CrudService } from '../Service/crud.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Proprietaire } from '../Model/Proprietaire.model';
+import { Tache } from '../Model/Tache.model';
 
 @Component({
-  selector: 'app-add-pet',
-  templateUrl: './add-pet.component.html',
-  styleUrls: ['./add-pet.component.css']
+  selector: 'app-addtodo',
+  templateUrl: './addtodo.component.html',
+  styleUrls: ['./addtodo.component.css']
 })
-export class AddPetComponent implements OnInit {
-
-  liste : Animal[]=[]
-  liste1 : Animal[]=[]
+export class AddtodoComponent implements OnInit {
   nbranim=0;
   total=0;
+  liste:Animal[]=[]
  ajoutForm: FormGroup
  currentProp=new Proprietaire();
  user:any
  currentuser:any
- userFile:any
- message?:String
- imgURL:any
- imagePath:any
- offre2:Animal=new Animal();
+ tache1:Tache[]=[];
   constructor(
      private service: CrudService,
     private router: Router,
@@ -35,16 +30,20 @@ export class AddPetComponent implements OnInit {
       this.user=this.service.userDetail()
 
       let formControls = {
-        nom: new FormControl('', [
+        titre: new FormControl('', [
           Validators.required,
   
         ]),
        
-        race: new FormControl('', [
+        description: new FormControl('', [
           Validators.required,
   
         ]),
-        daten: new FormControl('', [
+        date: new FormControl('', [
+          Validators.required,
+  
+        ]),
+        anim: new FormControl('', [
           Validators.required,
   
         ]),
@@ -53,25 +52,29 @@ export class AddPetComponent implements OnInit {
       this.ajoutForm= this.fb.group(formControls)
     }
     
-    get nom() { return this.ajoutForm.get('nom') }
-    get race() { return this.ajoutForm.get('race') }
-    get daten() { return this.ajoutForm.get('daten') }
-   
-    ajouterAnimal() {
+    get titre() { return this.ajoutForm.get('titre') }
+    get description() { return this.ajoutForm.get('description') }
+    get date() { return this.ajoutForm.get('date') }
+    get anim() { return this.ajoutForm.get('anim') }
+
+
+    ajouterTache() {
       let data = this.ajoutForm.value;
       console.log(data);
-      let anim = new Animal(
-         undefined ,data.nom, data.race,JSON.parse(JSON.stringify(this.currentProp)),data.poids, data.daten,data.image);
-         console.log(anim); 
-         this.currentProp.animal.push(anim);
+      
+      let tache =new Tache(
+         undefined ,data.titre,data.anim, data.date,data.description,JSON.parse(JSON.stringify(this.currentProp)));
+         console.log(tache); 
+         this.tache1=this.currentProp.tache
+         this.tache1.push(tache);
          console.log(55)
          this.service.updateProp(this.currentProp.id!, this.currentProp)
-      if(data.nom==0||data.race==0||data.daten==0)
+      if(data.titre==0||data.date==0||data.description==0||data.anim==0)
       {this.toast.info({
         detail:'error msg !!',
         summary:'remplir votre champs'
       });}else {    
-      this.service.addAnimal(anim).subscribe(
+      this.service.addTache(tache).subscribe(
 
   
         res => {
@@ -81,7 +84,7 @@ export class AddPetComponent implements OnInit {
             summary:'Ajout avec Succés'
           }); 
   
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/todolists']);
         },
         err => {
           console.log(err);
@@ -102,33 +105,13 @@ export class AddPetComponent implements OnInit {
       this.service.getPropById(this.service.userDetail().id).subscribe(Proprietaire=>{
         this.currentProp=Proprietaire
       })
+      this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
+        this.liste=proprietaire.animal
+        this.nbranim=proprietaire.animal.length
+        console.log(this.nbranim)
+       
+      })
     }
 
-    Continue(){
-      this.user=localStorage.getItem("user")
-    this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
-      this.liste=proprietaire.animal
-      this.nbranim=proprietaire.animal.length
-      console.log(this.nbranim)
-      if(this.nbranim==0)
-        {this.toast.info({
-          detail:'error msg !!',
-          summary:'You Must Add Your Pet'
-        });}
-        else{
-          this.router.navigate(["/dashboard"]).then(()=>{
-            window.location.reload()
-          })
-      }
-      // this.total=this.liste2.length
-      
-      // this.liste2=this.liste.filter(offre=>offre.etat==true)
-      // this.liste3=this.liste2
-     
-    })
- 
-  
-  }
-    
   
   }

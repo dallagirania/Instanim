@@ -28,8 +28,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
 import { TodoListsComponent } from './todo-lists/todo-lists.component';
 import { ImportantTodoComponent } from './important-todo/important-todo.component';
-import { AddTodoComponent } from './add-todo/add-todo.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
+import { AddtodoComponent } from './addtodo/addtodo.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { AnimalComponent } from './animal/animal.component';
 
 
 
@@ -61,9 +63,11 @@ const routes: Routes = [
   { path: 'profile/:id', component:ProfileComponent},
   { path: 'chat', component:ChatComponent},
   { path: 'todolists', component:TodoListsComponent},
-  { path: 'todolists/:important', component:ImportantTodoComponent},
-  { path: 'addtodo', component:AddTodoComponent},
-  { path: 'editanim', component:EditAnimalComponent},
+  { path: 'todolistImportant', component:ImportantTodoComponent},
+  { path: 'anim', component:AnimalComponent},
+  { path: 'editanim/:id', component:EditAnimalComponent},
+  { path: 'addtodo', component:AddtodoComponent},
+  // { path: 'dialog', component:DialogComponent},
 ];
 
 @NgModule({

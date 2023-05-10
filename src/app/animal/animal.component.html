@@ -3,24 +3,18 @@
     <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
         <div class="feed-content-header">
-            <h5>Edit the coordinates of your pet</h5>
+            <h5>Add New pet</h5>
           </div>
-        <form >
+        <form  [formGroup]="ajoutForm" (ngsubmit)="ajouterAnimal()" >
             <div class="formulaire">
                 <div class="form-title">
                     <label for="titre">Picture</label><br>
         
                  <div class="photo-div">
                  <div class="pet-pic-div">
-                <img [src]="imgURL" class="pet-pic" *ngIf="imgURL;else admin">
-                <ng-template #admin>
-                    <img [src]="currentAnim.image"   class="pet-pic" *ngIf="currentAnim.image;else admin1">
-                    <ng-template #admin1>
-                        <img src="assets/images/dog.png"   class="pet-pic" >
-                   </ng-template>
-               </ng-template>
+                <img [src]="imgURL" class="pet-pic" >
                </div>
-                <input id="default-btn" type="file" hidden  #file accept="image/*" (change)="onSelectFile($event)">
+                <input id="default-btn" type="file" hidden  #file accept="image/*" (change)="onSelectFile($event)"  formControlName="image">
                 <button  id="edit-btn" (click)="file.click()"><i class="fa-regular fa-pen-to-square"></i>Edit</button>
               
                 </div>
@@ -28,32 +22,30 @@
             <div class="ligne">
                 <div class="form-title">
                     <label for="titre">Nom</label><br>
-                    <input type="text" class="input" name="nom"[(ngModel)]="currentAnim.nom">
+                    <input type="text" class="input"  placeholder="Name" formControlName="nom"  >
                 </div>
                 <div class="form-date">
                     <label for="date">Birthdate</label><br>
-                    <input type="date" class="input" name="daten"[(ngModel)]="currentAnim.daten">
+                    <input type="date" class="input"  placeholder="Name" formControlName="daten" >
                 </div>
             </div>
             <div class="ligne">
                 <div class="form-desc">
                     <label for="desc">Size (kg) </label><br>
-                    <input type="text" class="input"name="poids"[(ngModel)]="currentAnim.poids" >
+                    <input type="text" class="input" placeholder="size" formControlName="poids"  >
                 </div>
                 
                 <div class="form-anim">
                     <label for="Anim">Type </label><br>
-                    <input type="text" class="input"name="race"[(ngModel)]="currentAnim.race" >
-                    <!-- <select name="Anim" id="animal-all">
-                        <option value="animal1">cat</option>
-                        <option value="animal2">dog </option>
-                       <option value="animal3">Animal 3</option> 
-                    </select> -->
+                    <select name="race" id="pet_type" formControlName="race">
+                        <option value="cat" >Cat</option>
+                        <option value="dog">Dog</option>
+                      </select>
                 </div>
                 </div>
             </div>    
             <div class="add-todo-btn">
-                <button class="btn save" (click)="modifierSer()"><i class="fa-solid fa-pen-to-square" style="color: #001d23;"></i>Save Settings</button>
+                <button class="btn save" (ngsubmit)="ajouterAnimal()"><i class="fa-solid fa-pen-to-square" style="color: #001d23;"></i>Add Animal</button>
                 <button class="btn cancel" routerLink="/dashboard"><i class="fa-solid fa-xmark" style="color: #001d23;"></i> cancel</button>
 
             </div>

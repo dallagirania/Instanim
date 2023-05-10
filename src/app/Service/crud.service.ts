@@ -9,8 +9,11 @@ import { Animal } from '../Model/Animal.model';
 import { Veterinary } from '../Model/Veterinary.model';
 import { Contact } from '../Model/Contact.model';
 import { Services } from '../Model/Services.model';
-import { Publication } from '../Model/Publication.model';
+import { Publication} from '../Model/Publication.model';
 import { Blog } from '../Model/Blog.model';
+import { Tache } from '../Model/Tache.model';
+import { CommentBlog } from '../Model/CommentBlog.model';
+// import { PublicationComment } from '../Model/PublicationComment.model';
 
 
 const httpOption={
@@ -66,6 +69,14 @@ export class CrudService {
   getAnimal():Observable<Animal[]>{
     return this.http.get<Animal[]>(this.apiUrl+"/animal");
   }
+  public getAnimById(id : number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/animal/${id}`);
+  
+  }
+  updateAnim(id:number,animal:Animal):Observable<Animal>{
+    const Url=`${this.apiUrl+"/animal"}/${id}`
+    return this.http.put<Animal>(Url,animal,httpOption)
+  }
 
   addContact(contact:Contact){
     return this.http.post<any>(this.apiUrl+"/contact", contact);
@@ -76,13 +87,49 @@ export class CrudService {
   getPublication():Observable<Publication[]>{
     return this.http.get<Publication[]>(this.apiUrl+"/publication");
   }
+  getPubById(id : number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/publication/${id}`);
+  }
   getSer():Observable<Services[]>{
     return this.http.get<Services[]>(this.apiUrl+"/service");
   }
   getBlog():Observable<Blog[]>{
     return this.http.get<Blog[]>(this.apiUrl+"/blog");
   }
-  public getBlogById(id : number):Observable<any>{
+
+  getBlogById(id : number):Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/blog/${id}`);
+  }
+ 
+  /******************** todo ************** */
+  addTache(tache:Tache){
+    return this.http.post<any>(this.apiUrl+"/Tache", tache);
+  }
+
+  /*************** Comment Blog ***************/
+  addCommentBlog(publication:CommentBlog){
+    return this.http.post<any>(this.apiUrl+"/CBlog", publication);
+  }
+  getCommentBlog():Observable<CommentBlog[]>{
+    return this.http.get<CommentBlog[]>(this.apiUrl+"/CBlog");
+
+  }
+  getCommentByBlog(id:number):Observable<any[]>{
+    return this.http.get<any>(`${this.apiUrl}/CBlog/list-CommentBlog-by-blog/${id}`)  
+  }
+  updatePublication(id:number,vet:Publication):Observable<Publication>{
+    const Url=`${this.apiUrl+"/publication"}/${id}`
+    return this.http.put<Publication>(Url,vet,httpOption)
+  }
+
+  /********************* Comment Publication ***********************/
+  // addCommentPub(publication:PublicationComment){
+  //   return this.http.post<any>(this.apiUrl+"/CPubli", publication);
+  // }
+  // getCommentPub():Observable<PublicationComment[]>{
+  //   return this.http.get<PublicationComment[]>(this.apiUrl+"/CPubli");
+  // }
+  getCommentPubById(id : number):Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/CPubli/${id}`);
   }
 }

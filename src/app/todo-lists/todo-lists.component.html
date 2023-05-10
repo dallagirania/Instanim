@@ -2,159 +2,61 @@
 <div class="dashboard-container">
     <app-dashboard-menu></app-dashboard-menu>
     <div class="feed-content">
-        <div class="feed-content-left">
-            <div class="feed-content-todo-menu">
-                
-                <ul>
-                    <li class="todolists-title">
-                        <a routerLink="/todolists">
-                            <button>
-                                <h5>ToDoLists</h5>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="todo-btn">
-                        <ul>
-                            <li class="todo-important" >
-                                <a href="/todolists/:important">
-                                  <button class="todo-important-btn"> Important ToDoLists</button>
-                                </a>
-                              </li>
-                              <li style="position: relative">
-                                <a href="/addtodo">
-                                 <button class="todo-add-btn"><i class="fa-solid fa-square-plus" style="color: #001D23"></i> Add ToDo</button>
-                                </a>
-                              </li>
-                        </ul>
-                    </li>
-                    
-                    
-                  </ul>
-            </div>
+        <div class="feed-content-header">
+            <h5>To Do list</h5>
+            <div class="buttons">
+                <a href="/todolistImportant">
+                    <button class="todo-important-btn todo-btn"> My Featured ToDoLists</button>
+                  </a>
+                  <a >
+                    <button class="todo-add-btn todo-btn" routerLink="/addtodo">Add To List</button>
+                    <!-- routerLink="/addtodo" -->
+                  </a>
+             </div>
+          </div >
 
-            <div class="blog-list">
-                <div class="animals-todos">
-                    <div class="entete-todo">
-                        <img src="../../assets/images/cat.jpg" class="img-animal-todolist">
-                        <h6 class="animal-tit">Animal 1</h6>
-                        <button class="fa-solid-fa-angle-down"> 
-                            <p class="nb-todo">5</p> 
-                            <i class="fa-solid fa-angle-down" style="color: #f46f30;"></i>
-                        </button>
-                    </div>
+
+          <div class="blog-list">
+            <div class="animals-todos">
+                <div class="entete-todo">
+                    <div class="animal-name">
+                    <!-- <img src="../../assets/images/cat.jpg" class="img-animal-todolist"> -->
+                    <h6 class="animal-tit"><i class="fa-solid fa-list-check"></i>   My TODoListe</h6>
                 </div>
-
-                <div class="animals-todos">
-                    <div class="entete-todo">
-                        <img src="../../assets/images/cat.jpg" class="img-animal-todolist">
-                        <h6 class="animal-tit">Animal 2</h6>
-                        <button class="fa-solid-fa-angle-down">
-                            <p class="nb-todo">1</p> 
-                            <i class="fa-solid fa-angle-down" style="color: #f46f30;"></i>
-                        </button>      
-                    </div>         
+                    <button (click)="toDown()" class="fa-solid-fa-angle-down btn-down"> 
+                        <p class="nb-todo">{{nbranim}}</p> 
+                        <i class="fa-solid fa-angle-down" style="color: #f46f30;"></i>
+                    </button>
                 </div>
-
-                <div class="animals-todos down">
-                    <div class="entete-todo">
-                        <img src="../../assets/images/cat.jpg" class="img-animal-todolist">
-                        <h6 class="animal-tit">Animal 3</h6>
-                        <button class="fa-solid-fa-angle-down">
-                                <p class="nb-todo">2</p>
-                                <i class="fa-solid fa-chevron-up" style="color: #f46f30;"></i> 
-                        </button>
-                    </div>    
-                    <div class="todo-element">
-                        
-                        <div class="todo-element-entete">
-                            <img src="../../assets/images/todo_icon.png" class="icon-todolist">
-                            <div class="todo-element-entete-txt">
-                                <h6 class="todo-element-tit">Vaccin </h6>
-                                <p class="todo-element-date">29/05/2023</p> 
-                            </div>
-                        </div>
-                       
-                        <p class="todo-element-desc">Vaccination obligatoire et non retardive</p> 
-                        <div class="todo-element-icons">
-                            <div class="fav-done">
-                                Important?
-                                <button><i class="fa-solid fa-star" style="color: #f46f30;"></i></button>
-                                Done?
-                                <button><i class="fa-regular fa-circle-check" style="color: #f46f30;"></i></button>
-                            </div>
-                            <button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i></button>
-                                
-
-                        </div>  
-                    </div>
-
-                    <div class="todo-element">
-                        <div class="todo-element-entete">
-                            <img src="../../assets/images/todo_icon.png" class="icon-todolist">
-                            <div class="todo-element-entete-txt">
-                                <h6 class="todo-element-tit">Vaccin Optionel</h6>
-                                <p class="todo-element-date">29/05/2023</p> 
-                            </div>
-                        </div>
-                       
-                        <p class="todo-element-desc">Vaccination optionel durant les 2 premiers années puis obligatoire  </p> 
-                        <div class="todo-element-icons">
-                            <div class="fav-done">
-                                Important?
-                                <button><i class="fa-regular fa-star" style="color: #f46f30;"></i></button>
-                                Done?
-                                <button><i class="fa-regular fa-circle-check" style="color: #f46f30;"></i></button>
-                            </div>
-                            <button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i></button>
-                                
-
-                        </div>  
-                    </div>
-
-                    <div class="todo-element done">
-                        <div class="todo-element-entete">
-                            <img src="../../assets/images/todo_icon.png" class="icon-todolist">
-                            <div class="todo-element-entete-txt">
-                                <h6 class="todo-element-tit">Visite de vétérinaire</h6>
-                                <p class="todo-element-date">29/05/2023</p> 
-                            </div>
-                        </div>
-                       
-                        <p class="todo-element-desc"></p> 
-                        <div class="todo-element-icons">
-                            <div class="fav-done">
-                                Important?
-                                <button><i class="fa-solid fa-star" style="color: #f46f30;"></i></button>
-                                Done?
-                                <button><i class="fa-solid fa-circle-check" style="color: #143b0c;"></i></button>
-                            </div>
+                <div class="todo-content" >
+                    <div class="todo-element" *ngFor="let ser of liste ">
+                    <div class="todo-element-entete">
+                        <img src="../../assets/images/todo_icon.png" class="icon-todolist">
+                        <div class="todo-element-entete-txt">
+                            <h5 class="todo-element-tit">{{ser.titre}} </h5>
+                            <div class="tache">
+                                <h6 class="todo-element-date" style="color:blue"> {{ser.anim}}</h6>  
+                                <h6 class="todo-element-date">{{ser.date}} </h6> 
                             
-                            <button><i class="fa-solid fa-pen-to-square" style="color: #f46f30;"></i></button>
-
-
-                        </div>  
+                            </div>
+                           
+                        </div>
                     </div>
+                   
+                    <p class="todo-element-desc">{{ser.description}}</p> 
+                    <div class="todo-element-icons">
+                        <div class="fav-done">
+                            Important?
+                            <button><i class="fa-regular fa-star"  style="color: #f46f30;"></i></button>
+                            Done?
+                            <button><i class="fa-regular fa-circle-check" style="color: #f46f30;"></i></button>
+                        </div>     
+                    </div>  
                 </div>
+                
             </div>
-    </div>
-    <div class="feed-content-right">
-        <div class="birthdays-div section-title1">
-            <h5>Birthdays</h5>
-            <div class="celebrate-div">
-                <!-- <img class="gift-img"src="assets/images/gift.png" alt=""> -->
-                <i class="fa-solid fa-gift"></i>
-                <p>Celebrate NouNou's Birthday!</p>
             </div>
         </div>
-        <div class="birthdays-div section-title1">
-            <h5>Cure & Diseases</h5>
-            <div class="celebrate-div">
-                <!-- <img class="gift-img"src="assets/images/gift.png" alt=""> -->
-                <p> Canine distemper!</p>
-            </div>
+  
         </div>
     </div>
-    <!-- </div>
-   
-</div> -->
-    

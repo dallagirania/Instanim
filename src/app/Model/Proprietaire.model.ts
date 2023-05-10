@@ -1,5 +1,6 @@
 import { Animal } from "./Animal.model";
 import { Publication } from "./Publication.model";
+import { Tache } from "./Tache.model";
 
 export class Proprietaire{
     constructor(
@@ -11,8 +12,8 @@ export class Proprietaire{
         public img?:String ,
         public photo?:String ,
         public animal:Animal[]=[],
-        public publication:Publication[]=[]
-        
+        public tache:Tache[]=[],
+        public publication:Publication[]=[],
         ){
 
     }

@@ -20,10 +20,21 @@ export class BlogHomeComponent implements OnInit {
   liste6 : Blog[]=[]
   liste7 : Blog[]=[]
   titre:any
+  searchTerm = '';
+
+  term = '';
   constructor(
     private service:CrudService,
     private route:Router
   ) { }
+
+  Search(){
+    if(this.titre==""){
+      this.liste2=this.liste1
+    }else{
+      this.liste2= this.liste2.filter(res =>{return res.titre!.toLocaleLowerCase().match(this.titre.toLocaleLowerCase());});   
+    }
+  }
   ngOnInit(): void {
     this.service.getBlog().subscribe(vet=>{
       this.liste=vet
@@ -45,11 +56,5 @@ export class BlogHomeComponent implements OnInit {
       // })
   }
 
-  Search(){
-    if(this.titre !=""){
-      this.liste2= this.liste2.filter(res =>{return res.titre!.toLocaleLowerCase().match(this.titre.toLocaleLowerCase());});   
-    }else{
-      this.liste2=this.liste1
-    }
-  }
+
 }

@@ -5,7 +5,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { NgToastService } from 'ng-angular-popup';
 import { Animal } from '../Model/Animal.model';
 import { Proprietaire } from '../Model/Proprietaire.model';
-import { Publication } from '../Model/Publication.model';
+
 @Component({
   selector: 'app-dashboard-menu',
   templateUrl: './dashboard-menu.component.html',
@@ -30,6 +30,8 @@ export class DashboardMenuComponent implements OnInit {
       console.log(this.nbranim)
      
     })
+
+
     this.service.getProp().subscribe(anim=>{
       this.liste1=anim
       // this.nbprop=anim.length

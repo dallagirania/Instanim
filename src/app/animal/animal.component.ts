@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormControl, FormBuilder, Validators} from '@angular/forms';
-import { Animal } from '../Model/Animal.model';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrudService } from '../Service/crud.service';
-import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { Animal } from '../Model/Animal.model';
 import { Proprietaire } from '../Model/Proprietaire.model';
 
 @Component({
-  selector: 'app-add-pet',
-  templateUrl: './add-pet.component.html',
-  styleUrls: ['./add-pet.component.css']
+  selector: 'app-animal',
+  templateUrl: './animal.component.html',
+  styleUrls: ['./animal.component.css']
 })
-export class AddPetComponent implements OnInit {
+export class AnimalComponent implements OnInit {
 
   liste : Animal[]=[]
   liste1 : Animal[]=[]
@@ -48,6 +48,14 @@ export class AddPetComponent implements OnInit {
           Validators.required,
   
         ]),
+        poids: new FormControl('', [
+          Validators.required,
+  
+        ]),
+        image: new FormControl('', [
+          Validators.required,
+  
+        ]),
       
       }
       this.ajoutForm= this.fb.group(formControls)
@@ -56,12 +64,34 @@ export class AddPetComponent implements OnInit {
     get nom() { return this.ajoutForm.get('nom') }
     get race() { return this.ajoutForm.get('race') }
     get daten() { return this.ajoutForm.get('daten') }
-   
+    get poids() { return this.ajoutForm.get('poids') }
+    get image() { return this.ajoutForm.get('image') }
+    onSelectFile(event: any) {
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.userFile = file;
+    
+  
+        var mimeType = event.target.files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+          this.message = 'Sauf les images sont acceptés.';
+          return;
+        }
+  
+        var reader = new FileReader();
+  
+        this.imagePath = file;
+        reader.readAsDataURL(file);
+        reader.onload = (_event) => {
+          this.imgURL = reader.result;
+        };
+      }
+    }
     ajouterAnimal() {
       let data = this.ajoutForm.value;
       console.log(data);
       let anim = new Animal(
-         undefined ,data.nom, data.race,JSON.parse(JSON.stringify(this.currentProp)),data.poids, data.daten,data.image);
+         undefined ,data.nom, data.race,JSON.parse(JSON.stringify(this.currentProp)),data.poids, data.daten,this.imgURL);
          console.log(anim); 
          this.currentProp.animal.push(anim);
          console.log(55)
@@ -104,31 +134,6 @@ export class AddPetComponent implements OnInit {
       })
     }
 
-    Continue(){
-      this.user=localStorage.getItem("user")
-    this.service.getPropById(this.service.userDetail().id).subscribe(proprietaire=>{
-      this.liste=proprietaire.animal
-      this.nbranim=proprietaire.animal.length
-      console.log(this.nbranim)
-      if(this.nbranim==0)
-        {this.toast.info({
-          detail:'error msg !!',
-          summary:'You Must Add Your Pet'
-        });}
-        else{
-          this.router.navigate(["/dashboard"]).then(()=>{
-            window.location.reload()
-          })
-      }
-      // this.total=this.liste2.length
-      
-      // this.liste2=this.liste.filter(offre=>offre.etat==true)
-      // this.liste3=this.liste2
-     
-    })
- 
-  
-  }
-    
+   
   
   }
